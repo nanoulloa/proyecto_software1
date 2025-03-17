@@ -435,7 +435,6 @@ input[type="submit"]:hover{
     body {
         min-height: 700px;
         height: auto;
-        padding-bottom: 50px;
     }
     
     .formulario {
