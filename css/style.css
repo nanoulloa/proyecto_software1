@@ -22,7 +22,6 @@ body {
 
 .footer_titulo {
     font-size: 18px;
-    text-transform: lowercase;
 }
 
 .footer_centro a {
@@ -48,7 +47,6 @@ body {
 
 .footer_der li {
     color: white;
-    text-transform: lowercase;
 }
 
 @media (max-width: 800px) {
