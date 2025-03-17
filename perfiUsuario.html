@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil de usuario</title>
+    <link rel="stylesheet" type="text/css" href="css/lookTemporal.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+    <header class="menu_principal">
+        <div class="logo_header">
+            <img class="imagen" src="img/logo header.png" alt="logo de la municipalidad">
+        </div>
+        <ul class="opciones">
+            <li class="elemento_menu central"><a class="enlace_menu" href="#">Inicio</a></li>
+            <li class="elemento_menu central"><a class="enlace_menu" href="#">Avisos</a></li>
+        </ul>
+        <ul class="opciones2">
+            <li class="elemento_menu signup_item"><a class="enlace_menu" href="#">Sign up</a></li>
+            <li class="elemento_menu login_item"><a class="enlace_menu" href="#">Log in</a></li> 
+        </ul>
+    </header>
+   <main>
+        <section>
+            <div class="bloqueDeFondo">
+                <div class="foto_y_titulos">
+                    <div class="foto_perfil">
+                        <img src="img/foto_perfil_usuario.png" alt="foto_perfil_usuario" height="150px" width="210px">
+                    </div>
+                    <div class="titulos_perfil_usuario">
+                        <h1>Perfil de usuario</h1>
+                        <h2>correo@ejemplo.com</h2>
+                    </div>
+                    <div><p></p></div>
+                </div>
+                
+                <div class="titulos_perfil_usuario">
+                    <h3>
+                        Cuenta
+                    </h3>
+                </div>
+                <div class="formulario_usuario">
+                    <ul>
+                        <li>
+                            <div class="grupo-form">
+                                <label for="usuario">Usuario:</label>
+                                <input type="usuario" name="usuario" placeholder="Juanito Perez Lopez">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form">
+                                <label for="correo">Correo:</label>
+                                <input type="email" name="correo" placeholder="correo@correo.com">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form">
+                                <label for="contra">Contrasena:</label>
+                                <input type="password" name="contra" placeholder="*********" >
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form">
+                                <label for="Telefono">Telefono:</label>
+                                <input type="number" name="Telefono" placeholder="(506)8692-8484">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form">
+                                <label for="Direcion">Direcion:</label>
+                                <input type="text" name="Direcion" placeholder="correo@correo.com">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contenedor_boton">
+                    <div class="boton">
+                        <a href="">Guardar cambios</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+   </main> 
+   <footer class="footer">
+    <div class="footer-contenedor">
+        <div class="footer-izq">
+            <p class="footer-titulo">Municipalidad<br>Montes de Oca</p>
+        </div>
+        <div class="footer-centro">
+            <a href="https://www.facebook.com/gobmontesdeoca/" target="_blank">
+                <i class='bx bxl-facebook-square' ></i>   </a>
+            <a href="https://www.instagram.com/gobmontesdeoca/" target="_blank">
+                <i class='bx bxl-instagram-alt' ></i>  </a>
+            <a href="https://www.youtube.com/channel/UCux4pfOGXArPst7ZyDjxpog" target="_blank">
+                <i class='bx bxl-youtube' ></i>             </a>
+            <a href="https://twitter.com/GobMontesDeOca" target="_blank">
+                <i class='bx bxl-twitter' ></i> </a>
+        </div>
+        <div class="footer-der">
+            <ul>
+                <li>Home</li>
+                <li>servicios</li>
+                <li>Horario de atención:<br>
+                    Lunea a viernes
+                    8:00 AM - 4:00 PM
+                </li>
+                <li>   
+                    Central telefónica:
+                    2280-5589 / 2280-6034
+                    2280-4751 / 2280-5025
+                    2283-3845 / 2280-4894
+                    <br>
+                    Fax: 2281-2219
+                </li>
+                <li>
+               Ubicanos en: C. 57, San José, San Pedro
+            </li>
+            </ul>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
