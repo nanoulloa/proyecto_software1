@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100vh;
+    
 }
 
 *{
@@ -53,6 +53,8 @@ body{
 }
 
 .opciones{
+    text-decoration: none;
+    color: black;
     flex: 2;
     display: flex;
     justify-content: center;
@@ -63,6 +65,8 @@ body{
 }
 
 .opciones2{
+    text-decoration: none;
+    color: black;
     display: flex;
     list-style: none;
     height: auto;
