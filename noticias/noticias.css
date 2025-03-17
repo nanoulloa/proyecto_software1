@@ -20,7 +20,7 @@ h2 {
     text-align: center;
 }
 
-news_container {
+.news_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -30,7 +30,7 @@ news_container {
     margin-bottom: 2%;
 }
 
-news_card {
+.news_card {
     background: white;
     border-radius: 10px;
     overflow: hidden;
@@ -39,31 +39,31 @@ news_card {
     color: black;
 }
 
-news_card:hover {
+.news_card:hover {
     transform: scale(1.03);
 }
 
-news_image img {
+.news_image img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-news_image {
+.news_image {
     position: relative;
 }
 
-news_content {
+.news_content {
     padding: 15px;
 }
 
-news_content h3 {
+.news_content h3 {
     margin: 0;
     font-size: 18px;
     color: #0AB4FD;
 }
 
-noticias_fecha {
+.noticias_fecha {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -74,12 +74,12 @@ noticias_fecha {
     border-radius: 5px;
 }
 
-news_content p {
+.news_content p {
     font-size: 14px;
     color: #555;
 }
 
-news_content a {
+.news_content a {
     display: inline-block;
     margin-top: 10px;
     color: #007BFF;
