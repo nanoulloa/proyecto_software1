@@ -1,5 +1,13 @@
+a:-webkit-any-link{
+    text-decoration: none;
+    color: black;
+}
 body{
  margin: 0px;
+ position: relative;
+ scrollbar-color: #787878 #ffffff;
+ scrollbar-width: thin;
+ overflow-y: auto;
 }
 /*CONTENIDO DE HEADER*/
 
@@ -16,10 +24,6 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-}
-
-.logo_header{
-    flex: 1;
 }
 
 .imagen{
@@ -41,24 +45,22 @@ body{
 }
 
 .opciones{
-    a:visited{
-        color: black;
-        text-decoration: none;
-    }
     flex: 2;
     display: flex;
     justify-content: center;
     list-style: none;
     height: auto;
-    margin-right: 60px;
+}
+.opciones_perfil_ingresado{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    height: auto;
     margin-top: 5px;
 }
 
 .opciones2{
-    a:visited{
-        color: black;
-        text-decoration: none;
-    }
     display: flex;
     list-style: none;
     height: auto;
@@ -67,9 +69,11 @@ body{
     margin-top: 5px;
 }
 
-.elemento_menu:hover{
-    background-color: skyblue;
+.login_item:hover{
+    background-color: #b4b4b4;
     border-radius: 20px;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .elemento_menu ul{
@@ -84,22 +88,18 @@ body{
 .login_item{
     background-color: white;
     border-radius: 20px;
-}
-
-.login_item .enlace_menu {
-    color: black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 /*paguina home*/
-.fondo_home{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../img/Parque_montes.jpg);
-    background-repeat:no-repeat; 
-
+#slider_principal{
+    padding-top: 120px;
+    background-image: linear-gradient(to right, rgba(255,255,255, 0.7) 100% 100%),url(../img/Parque_montes.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: left top;
+    
 }
 .filtro_home {
     position: fixed;
@@ -112,7 +112,7 @@ body{
     
 }
 .contenido_home{
-    position: fixed;
+  
     top: 0;
     left: 0;
     width: 100%;
@@ -121,8 +121,8 @@ body{
     color: black;
 }
 .titulo_home{
+    margin-bottom: 120px;
     margin-left: 30px;
-    margin-top: 120px;
     p{
         font-size: 24px;
     }
@@ -130,21 +130,84 @@ body{
         margin-top: -20px;
         font-size: 80px;
     }
+    .btn {
+        background-color: #D9D9D9;
+        width: 100px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 25px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: #b4b4b4;
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
 }
-.subcontenido_home{
 
+.botones_menu_principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 170px;
+    p{
+        text-align: center;
+    }
+
+    .btn_menu_principal{
+        font-size: 50px;
+        background-color: #D9D9D9;
+        width: 100%; 
+        padding: 12px;
+        border-radius: 100px;
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    .btn_menu_principal:hover{
+        background-color: #b4b4b4;
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+   
+}
+
+.subcontenido_home{
+    margin-top: -105px;
     background-color: #0AB4FD;
     width: auto;
-    height: 70px;
+    height: auto;
     display: flex;  
     justify-content: space-between;
     align-items: center;
     padding: 30px;
 }
+.subcontenido_home_countainer{
+    margin-top: 100px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .subcontenido_home_texto{
     background-color: #D9D9D9;
-    width: auto;
-    height: 70px;
+    width: 50%;
+    padding: 15px;
+}
+.img_subcontenido_home{
+    flex: 1;
+    width: 50%;
+    margin-left: 20px;
+}
+.img_subcontenido_home img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -287,5 +350,44 @@ body{
 
     .footer-der ul {
         padding: 0;
+    }
+    .botones_menu_principal{
+        padding: 0px;
+    }
+    .subcontenido_home_countainer{
+        display: block;
+    }
+    .subcontenido_home_texto{
+       width: 95%; 
+    }
+    .img_subcontenido_home{
+        width: 95%;
+    }
+}
+@media (max-width: 800px) {
+    .menu_principal {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .logo_header {
+        flex: 1 0 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .imagen {
+        margin-left: 0;
+    }
+    
+    .opciones {
+        justify-content: center;
+    }
+    
+    .opciones2 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 }
