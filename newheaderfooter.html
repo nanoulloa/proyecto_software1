@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montes de Oca footer</title>
-    <link rel="stylesheet" href="css/footerheader_template.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="/newheaderfooter.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -18,15 +18,24 @@
         <ul class="opciones">
             <li class="elemento_menu"><a href="#">Inicio</a></li>
             <li class="elemento_menu"><a href="/servicios.html">Servicios</a></li>
-            <li class="elemento_menu"><a href="/noticias/noticias.html">Noticias</a></li>
-            <li class="elemento_menu"><a href="/avisos/avisos.html">Avisos</a></li>
-            <li class="elemento_menu signup_item"><a href="#">Sign Up</a></li>
-            <li class="elemento_menu login_item"><a href="/log_in/montes_de_oca.html">Log In</a></li>
+            <li class="elemento_menu dropdown">
+                <a>Noticias</a>
+                <ul class="dropdown_menu">
+                    <li><a href="/noticias/locales.html">Locales</a></li>
+                    <li class="elemento_menu"><a href="/avisos/avisos.html">Avisos</a></li>
+                    <li><a href="#">Iniciativas</a></li>
+                </ul>
+            </li>
+            <li class="elemento_menu"><a href="/contactoIndex.html">Contacto</a></li>
+            <li class="elemento_menu signup_item"><a href="#">Registrarse</a></li>
+            <li class="elemento_menu login_item"><a href="/log_in/montes_de_oca.html">Iniciar sesión</a></li>
         </ul>
     </header>
+
     <main>
 
     </main>
+
     <footer class="footer">
         <div class="footer_contenedor">
             <div class="footer_izq">
@@ -42,6 +51,7 @@
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="/servicios.html">Servicios</a></li>
+                    <li><a href="/contactoIndex.html">Contacto</a></li>
                     <li>Horario de atención:<br>Lunes a viernes 8:00 AM - 4:00 PM</li>
                     <li>Teléfono: 2280-5589 / 2280-6034 / 2280-4751</li>
                     <li>Ubicación: C. 57, San José, San Pedro</li>

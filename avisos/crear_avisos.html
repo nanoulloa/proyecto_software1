@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avisos para la Comunidad</title>
-    <link rel="stylesheet" href="/avisos/avisos.css">
+    <title>Crear Noticia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/noticias/crear_noticias.css">
+</head>
 <body>
     <header>
         <div class="logo_header">
             <img class="imagen" src="/img/logo header.png" alt="logo de la municipalidad">
         </div>
         <ul class="opciones">
-            <li class="elemento_menu"><a href="/homePage.html">Inicio</a></li>
+            <li class="elemento_menu"><a href="#">Inicio</a></li>
             <li class="elemento_menu"><a href="/servicios.html">Servicios</a></li>
             <li class="elemento_menu"><a href="/noticias/noticias.html">Noticias</a></li>
             <li class="elemento_menu"><a href="/avisos/avisos.html">Avisos</a></li>
@@ -22,31 +22,16 @@
             <li class="elemento_menu login_item"><a href="/log_in/montes_de_oca.html">Log In</a></li>
         </ul>
     </header>
-    <main>
-        <div class="container_avisos">
-            <h1>Avisos para la Comunidad</h1>
-            <div class="aviso">
-                <h2>Corte de Agua Programado</h2>
-                <p>Se informa a la comunidad que el próximo lunes 18 de marzo habrá un corte de agua desde las 8:00 AM hasta las 4:00 PM.</p>
-            </div>
-            <div class="aviso">
-                <h2>Reunión Vecinal</h2>
-                <p>Invitamos a todos los vecinos a la reunión del comité comunitario el viernes 22 de marzo a las 6:00 PM en la casa comunal.</p>
-            </div>
-            <div class="aviso">
-                <h2>Feria de Intercambio</h2>
-                <p>Este sábado 24 de marzo se llevará a cabo una feria de intercambio en el parque central desde las 10:00 AM hasta las 2:00 PM. ¡Ven y participa!</p>
-            </div>
-            <div class="aviso">
-                <h2>Limpeza de Espacios Comunes</h2>
-                <p>El domingo 25 de marzo se realizará una jornada de limpieza en los espacios comunes del barrio a partir de las 9:00 AM. Agradecemos la colaboración de todos.</p>
-            </div>
-            <div class="aviso">
-                <h2>Clases de Yoga al Aire Libre</h2>
-                <p>Se invita a la comunidad a participar en clases gratuitas de yoga al aire libre todos los miércoles a las 7:00 AM en el parque central.</p>
-            </div>
-        </div>
-    </main>
+    <div class="container">
+        <h1>Avisos para la Comunidad</h1>
+        <form class="formulario">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <label for="contenido">Contenido:</label>
+            <textarea id="contenido" name="contenido" rows="5" required></textarea>
+            <button type="submit">Crear Aviso</button>
+        </form>
+    </div>
     <footer class="footer">
         <div class="footer_contenedor">
             <div class="footer_izq">
@@ -69,5 +54,6 @@
             </div>
         </div>
     </footer>
+    <script src="/avisos/crear_avisos.js"></script>
 </body>
 </html>

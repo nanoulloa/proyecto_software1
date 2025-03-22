@@ -23,15 +23,18 @@
         </ul>
     </header>
     <div class="container">
-        <h1>Avisos para la Comunidad</h1>
+        <h1>Noticias para la Comunidad</h1>
         <form class="formulario">
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" required>
             <label for="contenido">Contenido:</label>
             <textarea id="contenido" name="contenido" rows="5" required></textarea>
-            <label for="fecha">Fecha de Publicación:</label>
-            <input type="date" id="fecha" name="fecha" required>
-            <button type="submit">Crear Noticia</button>
+            <label for="fecha-inicio">Fecha de publicación:</label>
+            <input type="date" id="fecha-inicio" name="fecha-inicio" required>
+    
+            <label for="imagen">Subir imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+            <button type="submit">Crear noticia</button>
         </form>
     </div>
     <footer class="footer">
@@ -56,5 +59,6 @@
             </div>
         </div>
     </footer>
+    <script src="/avisos/crear_avisos.js"></script>
 </body>
 </html>
