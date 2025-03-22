@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandera Azul noticia</title>
-    <link rel="stylesheet" href="/noticias/noticias.css">
+    <title>Crear Noticia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/noticias/crear_noticias.css">
 </head>
 <body>
-    <main class="contenedor_main">
-        <article class="noticia_detallada">
-            <h2>Proceso De Exoneración De Impuestos</h2>
-            <p class="fecha_publicacion">07 de marzo de 2025</p>
-            <img src="/img/mejoras_ parque_del_este.png" alt="Exoneracion de impuestos" class="imagen_noticia">
-            <p class="contenido_noticia">
-                Este evento, realizado en la ciudad de Monte ocas, reunió a los líderes más importantes de la proteccion ambiental...
-                <br><br>
-                Se han habilitado nuevas fechas para la solicitud de exoneración de impuestos municipales. infórmate sobre los requisitos y plazos..
-            </p>
-        </article>
-    </main>
+    <header>
+        <div class="logo_header">
+            <img class="imagen" src="/img/logo header.png" alt="logo de la municipalidad">
+        </div>
+        <ul class="opciones">
+            <li class="elemento_menu"><a href="#">Inicio</a></li>
+            <li class="elemento_menu"><a href="/servicios.html">Servicios</a></li>
+            <li class="elemento_menu"><a href="/noticias/noticias.html">Noticias</a></li>
+            <li class="elemento_menu"><a href="/avisos/avisos.html">Avisos</a></li>
+            <li class="elemento_menu signup_item"><a href="#">Sign Up</a></li>
+            <li class="elemento_menu login_item"><a href="/log_in/montes_de_oca.html">Log In</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <h1>Avisos para la Comunidad</h1>
+        <form class="formulario">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <label for="contenido">Contenido:</label>
+            <textarea id="contenido" name="contenido" rows="5" required></textarea>
+            <label for="fecha">Fecha de Publicación:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <button type="submit">Crear Noticia</button>
+        </form>
+    </div>
     <footer class="footer">
         <div class="footer_contenedor">
             <div class="footer_izq">

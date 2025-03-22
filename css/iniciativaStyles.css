@@ -1,0 +1,158 @@
+/* Header mariano */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: white;
+}
+
+.menu_principal{
+    margin: 0;
+    padding: 0;
+}
+
+.menu_principal{
+    background-color: #0AB4FD;
+    width: auto;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagen{
+    width: 70px;
+    height: 70px;
+    margin-left: 40px;
+}
+
+.elemento_menu{
+    margin: auto;
+    padding: 10px 0;
+    transition: .1s;
+}
+
+.elemento_menu{
+    list-style: none;
+    padding: 10px;
+    margin: 12px;
+}
+
+.opciones{
+    display: flex;
+    list-style: none;
+    height: auto;
+    padding-right: 0;
+    margin-right: 50px;
+    margin-top: 5px;
+}
+
+.elemento_menu:hover{
+    background-color: skyblue;
+    border-radius: 20px;
+}
+
+.elemento_menu ul{
+    position: absolute;
+    display: none;
+}
+
+.elemento_menu:hover > ul{
+    display: block;
+}
+
+.login_item{
+    background-color: white;
+    border-radius: 20px;
+}
+
+.opciones .elemento_menu:last-child a {
+    color: black;
+}
+
+/* header mariano*/
+
+.formulario-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.formulario-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.formulario-wrapper h2 {
+    color: #01579B;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #29B6F6;
+}
+
+.iniciativa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #0277BD;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #29B6F6;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #29B6F6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0277BD;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .formulario-container {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    .formulario-wrapper {
+        padding: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
