@@ -9,51 +9,32 @@
     <link rel="stylesheet" href="/noticias/crear_noticias.css">
 </head>
 <body>
-    <header>
-        <div class="logo_header">
-            <img class="imagen" src="/img/logo header.png" alt="logo de la municipalidad">
-        </div>
-        <ul class="opciones">
-            <li class="elemento_menu"><a href="#">Inicio</a></li>
-            <li class="elemento_menu"><a href="/servicios.html">Servicios</a></li>
-            <li class="elemento_menu"><a href="/noticias/noticias.html">Noticias</a></li>
-            <li class="elemento_menu"><a href="/avisos/avisos.html">Avisos</a></li>
-            <li class="elemento_menu signup_item"><a href="#">Sign Up</a></li>
-            <li class="elemento_menu login_item"><a href="/log_in/montes_de_oca.html">Log In</a></li>
-        </ul>
-    </header>
+
+    <div id="header-placeholder"></div>
+
     <div class="container">
         <h1>Avisos para la Comunidad</h1>
-        <form class="formulario">
+        <form class="formulario" id="aviso-form">
             <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required>
+            <div class="input-container">
+                <input type="text" id="titulo" name="titulo" required>
+                <span class="icon" id="titulo-icon">❌</span>
+            </div>
+    
             <label for="contenido">Contenido:</label>
-            <textarea id="contenido" name="contenido" rows="5" required></textarea>
+            <div class="input-container">
+                <textarea id="contenido" name="contenido" rows="5" required></textarea>
+                <span class="icon" id="contenido-icon">❌</span>
+            </div>
+    
             <button type="submit">Crear Aviso</button>
         </form>
     </div>
-    <footer class="footer">
-        <div class="footer_contenedor">
-            <div class="footer_izq">
-                <p class="footer_titulo">Municipalidad<br>Montes de Oca</p>
-            </div>
-            <div class="footer_centro">
-                <a href="https://www.facebook.com/gobmontesdeoca/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/gobmontesdeoca/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCux4pfOGXArPst7ZyDjxpog" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://twitter.com/GobMontesDeOca" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-            <div class="footer_der">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="/servicios.html">Servicios</a></li>
-                    <li>Horario de atención:<br>Lunes a viernes 8:00 AM - 4:00 PM</li>
-                    <li>Teléfono: 2280-5589 / 2280-6034 / 2280-4751</li>
-                    <li>Ubicación: C. 57, San José, San Pedro</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/header_footer/header_footer.js"></script> 
     <script src="/avisos/crear_avisos.js"></script>
+
 </body>
 </html>
