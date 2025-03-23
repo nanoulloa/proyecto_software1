@@ -4,13 +4,6 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
 }
 
 header {
@@ -42,14 +35,11 @@ header {
 .elemento_menu a:hover {
     color: #ffcc00;
 }
-
-/*Responsive del header*/
-
 @media (max-width: 768px) {
     .opciones {
         display: none;
         flex-direction: column;
-        background: #0AB4FD;
+        background: #0073e6;
         position: absolute;
         top: 60px;
         right: 20px;
@@ -64,37 +54,6 @@ header {
         display: block;
     }
 }
-
-.container_avisos {
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    text-align: center;
-    color: #0AB4FD;
-}
-.aviso {
-    background: #D9D9D9;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-left: 5px solid #0AB4FD;
-}
-.aviso h2 {
-    margin: 0;
-    font-size: 18px;
-    color: #0AB4FD;
-}
-.aviso p {
-    margin: 5px 0 0;
-    font-size: 14px;
-}
-
 .container {
     width: 90%;
     max-width: 800px;
@@ -108,22 +67,43 @@ h1 {
     text-align: center;
     color: #0AB4FD;
 }
-.aviso {
-    background: #e3f2fd;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-left: 5px solid #0AB4FD;
+
+.formulario {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.aviso h2 {
-    margin: 0;
-    font-size: 18px;
-    color: #0AB4FD;
+
+.formulario label, 
+.formulario input, 
+.formulario textarea {
+    width: 80%; 
+    max-width: 500px; 
+    text-align: center;
 }
-.aviso p {
-    margin: 5px 0 0;
-    font-size: 14px;
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
+.formulario button {
+    margin-top: 15px;
+    background: #0AB4FD;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.formulario button:hover {
+    background: #ffcc00;
+}
+
 
  /* Estilos del Footer */
  .footer {

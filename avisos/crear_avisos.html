@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Noticia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/noticias/crear_noticias.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+        <h1>Avisos para la Comunidad</h1>
+        <form class="formulario" id="aviso-form">
+            <label for="titulo">Título:</label>
+            <div class="input-container">
+                <input type="text" id="titulo" name="titulo" required>
+                <span class="icon" id="titulo-icon">❌</span>
+            </div>
+    
+            <label for="contenido">Contenido:</label>
+            <div class="input-container">
+                <textarea id="contenido" name="contenido" rows="5" required></textarea>
+                <span class="icon" id="contenido-icon">❌</span>
+            </div>
+    
+            <button type="submit">Crear Aviso</button>
+        </form>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/header_footer/header_footer.js"></script> 
+    <script src="/avisos/crear_avisos.js"></script>
+
+</body>
+</html>
