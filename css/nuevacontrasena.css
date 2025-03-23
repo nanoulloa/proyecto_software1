@@ -10,7 +10,6 @@ body{
     box-sizing: border-box;
     text-decoration: none;
     color: black;
-    font-family: 'Poppins', sans-serif;
 }
 
 .nueva_contrasena__grupo-input {
@@ -173,52 +172,6 @@ input[type="submit"]:hover{
     background-color: #D9D9D9;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.footer{
-    background-color: #00AEEF;
-    padding: 20px;
-    margin-top: 25px;
-}
-
-.footer-contenedor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.footer-izq, .footer-der {
-    color: white;
-}
-
-.footer-titulo {
-    font-size: 18px;
-}
-
-.footer-centro a {
-    margin: 0 10px;
-    text-decoration: none;
-
-}
-
-.footer-centro i {
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    color: black;
-}
-
-.footer-der ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-}
-
-.footer-der li {
-    color: white;
 }
 
 /*RESPONSIVE*/
