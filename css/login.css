@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 *{
@@ -9,7 +9,6 @@ body{
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: black;
 }
 
 /*FORMULARIO*/
@@ -23,6 +22,7 @@ body{
     border-radius: 10px;
     z-index: 5;
     padding: 4px;
+    margin-bottom: 4%;
 }
 
 .formulario_inicio_sesion h1{
@@ -87,7 +87,7 @@ form .inicio_sesion{
 
 .recordar{
     margin: -5px 0 20px 5px;
-    color: blue;
+    color: black;
     cursor: pointer;
 }
 
@@ -121,7 +121,7 @@ input[type="submit"]:hover{
     outline: none;
 }
 
-.social-icon-btn{
+.google_social-icon-btn{
     display: block;
     font-size: 24px;
     padding: 5px;
