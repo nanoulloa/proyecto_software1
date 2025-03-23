@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error(`Error cargando ${file}:`, error));
     }
 
-    loadComponent("header_placeholder", "../header_footer/header.html");
-    loadComponent("footer_placeholder", "../header_footer/footer.html");
+    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
+    loadComponent("header_placeholder", "/proyecto_software1/componentes/header.html");
 });
