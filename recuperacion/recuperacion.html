@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseña olvidada</title>
+    <link rel="stylesheet" href="recuperacion.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="contenedor_recuperacion">
+    <div class="formulario_recuperacion">
+        <h1>Ayuda de contraseña</h1>
+        <p>Introduzca la dirección de correo electrónico asociado con su
+            cuenta.</p>
+        <form method="post">
+            <div class="recuperacion" id="grupo_recuperacion">
+                <label>E-mail</label>
+                <div class="recuperacion__grupo-input">
+                    <input type="email" class="recuperacion" name="correo_recuperacion" id="correo_recuperacion">
+                    <i class='recuperacion bx bxs-x-circle'></i>
+                </div>
+                <p class="recuperacion__input-error">
+                    Debe agregar un correo con la siguiente estructura dato1@dato2.com,
+                    dato1 acepta letras, guion bajo y numeros
+                    dato2 acepta solo letras
+                </p>
+                <button type="submit" class="btn-continuar_recuperacion">
+                    <a href="autenticacion.html">Continuar</a>
+                </button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <div class="footer-izq">
+                <p class="footer-titulo">Municipalidad<br>Montes de Oca</p>
+            </div>
+            <div class="footer-centro">
+                <a href="https://www.facebook.com/gobmontesdeoca/" target="_blank">
+                    <i class='bx bxl-facebook-square' ></i>   </a>
+                <a href="https://www.instagram.com/gobmontesdeoca/" target="_blank">
+                    <i class='bx bxl-instagram-alt' ></i>  </a>
+                <a href="https://www.youtube.com/channel/UCux4pfOGXArPst7ZyDjxpog" target="_blank">
+                    <i class='bx bxl-youtube' ></i>             </a>
+                <a href="https://twitter.com/GobMontesDeOca" target="_blank">
+                    <i class='bx bxl-twitter' ></i> </a>
+            </div>
+            <div class="footer-der">
+                <ul>
+                    <li>Home</li>
+                    <li>servicios</li>
+                    <li>Horario de atención:<br>
+                        Lunea a viernes
+                        8:00 AM - 4:00 PM
+                    </li>
+                    <li>   
+                        Central telefónica:
+                        2280-5589 / 2280-6034
+                        2280-4751 / 2280-5025
+                        2283-3845 / 2280-4894
+                        <br>
+                        Fax: 2281-2219
+                    </li>
+                    <li>
+                   Ubicanos en: C. 57, San José, San Pedro
+                </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="recuperacion.js"></script>
+
+</body>
+
+</html>

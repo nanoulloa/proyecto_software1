@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olvido de contraseña autenticación</title>
+    <link rel="stylesheet" href="autenticacion.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="contenedor_recuperacion_autenticacion">
+    <div class="formulario_recuperacion_autenticacion">
+        <h1>Ingresar el código de verificación</h1>
+        <p>Para tu seguridad, enviamos el código a tu correo electrónico.</p>
+        <form method="post">
+            <div class="recuperacion_autenticacion" id="grupo_recuperacion_autenticacion">
+                <label>Ingresar código de verificación</label>
+                <div class="recuperacion_autenticacion__grupo-input">
+                    <input type="number" class="recuperacion_autenticacion" name="numero_recuperacion_autenticacion" id="numero_recuperacion_autenticacion">
+                    <i class='recuperacion_autenticacion bx bxs-x-circle'></i>
+                </div>
+                <p class="recuperacion_autenticacion__input-error">
+                    El código de verificación debe ser un número de 6 dígitos
+                </p>
+                <button type="submit" class="btn-continuar_autenticacion">
+                    <a href="nuevacontrasena.html">Enviar código</a>
+                </button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <div class="footer-izq">
+                <p class="footer-titulo">Municipalidad<br>Montes de Oca</p>
+            </div>
+            <div class="footer-centro">
+                <a href="https://www.facebook.com/gobmontesdeoca/" target="_blank">
+                    <i class='bx bxl-facebook-square' ></i>   </a>
+                <a href="https://www.instagram.com/gobmontesdeoca/" target="_blank">
+                    <i class='bx bxl-instagram-alt' ></i>  </a>
+                <a href="https://www.youtube.com/channel/UCux4pfOGXArPst7ZyDjxpog" target="_blank">
+                    <i class='bx bxl-youtube' ></i>             </a>
+                <a href="https://twitter.com/GobMontesDeOca" target="_blank">
+                    <i class='bx bxl-twitter' ></i> </a>
+            </div>
+            <div class="footer-der">
+                <ul>
+                    <li>Home</li>
+                    <li>servicios</li>
+                    <li>Horario de atención:<br>
+                        Lunea a viernes
+                        8:00 AM - 4:00 PM
+                    </li>
+                    <li>   
+                        Central telefónica:
+                        2280-5589 / 2280-6034
+                        2280-4751 / 2280-5025
+                        2283-3845 / 2280-4894
+                        <br>
+                        Fax: 2281-2219
+                    </li>
+                    <li>
+                   Ubicanos en: C. 57, San José, San Pedro
+                </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="autenticacion.js"></script>
+
+</body>
+
+</html>

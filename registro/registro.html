@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="registro.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Registro</title>
+    </head>
+    <body>
+
+        <header class="menu_principal1">
+            <div class="logo_header">
+                <img class="imagen_header" src="../img/logo header.png" alt="logo de la municipalidad">
+            </div>
+            <ul class="opciones_header1">
+                <li class="elemento_menu1"><a class="enlace_menu1" href="#">Inicio</a></li>
+                <li class="elemento_menu1"><a class="enlace_menu1" href="#">Avisos</a></li>
+            </ul>
+            <ul class="opciones2_header1">
+                <li class="elemento_menu1 signup_item"><a class="enlace_menu1" href="../registro/registro.html">Sign up</a></li>
+                <li class="elemento_menu1 login_item"><a class="enlace_menu1" href="#">Log in</a></li>
+            </ul>
+        </header>
+        
+        <main>
+
+            <form action="#" class="formulario__registro" id="formulario__registro">
+
+                 <div class="titulo_registro">
+                    <h1>Registro</h1>
+                 </div>
+
+                 <!-- Grupo Nombre-->
+                 <div class="formulario__grupo" id="grupo__nombre">
+                    <label class="formulario__label">Nombre completo</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        El nombre debe tener mínimo 3 letras y solo se admiten letras y espacios
+                    </p>
+                 </div>
+
+                 <!-- Grupo contrasena-->
+                 <div class="formulario__grupo" id="grupo__password">
+                    <label class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password" id="password">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        La contraseña debe ser de 4 a 12 dígitos
+                    </p>
+                 </div>
+
+                 <!-- Grupo contrasena2-->
+                 <div class="formulario__grupo" id="grupo__password2">
+                    <label class="formulario__label">Confirmar contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password2" id="password2">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        Las contraseñas no coinciden
+                    </p>
+                 </div>
+
+                 <!-- Grupo correo-->
+                 <div class="formulario__grupo" id="grupo__correo">
+                    <label class="formulario__label">Correo electronico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        Debe agregar un correo con la siguiente estructura dato1@dato2.com
+                        dato1 acepta letras, guion bajo y números
+                        dato2 acepta solo letras
+                    </p>
+                 </div>
+
+                 <!-- Grupo telefono-->
+                 <div class="formulario__grupo" id="grupo__telefono">
+                    <label class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="telefono" id="telefono">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        El número debe tener entre 8 y 11 dígitos
+                    </p>
+                 </div>
+
+                 <!-- Grupo Canton-->
+                 <div class="formulario__grupo" id="grupo__canton">
+                    <label class="formulario__label">Seleccione su cantón: </label>
+                    <div class="formulario__grupo-select">
+                        <select id="canton">
+                            <option value="null"></option>
+                            <option value="Montes de oca">Montes de Oca</option>
+                         </select> 
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>  
+                    </div>
+                    <p class="formulario__select-error">
+                        Debe de seleccionar al menos una opción 
+                    </p>
+                 </div>
+
+                 <!-- Grupo Distrito-->
+                 <div class="formulario__grupo" id="grupo__distrito">
+                    <label class="formulario__label">Seleccione su distrito: </label>
+                        <select id="distrito">
+                            <option value="null"></option>
+                            <option value="Individual">San Pedro</option>
+                            <option value="Individual">Sabanilla</option>
+                            <option value="Individual">Mercedes</option>
+                            <option value="Individual">San Rafael</option>
+                         </select> 
+                    <div class="formulario__grupo-select">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i> 
+                    </div>
+                    <p class="formulario__select-error">
+                        Debe de seleccionar al menos una opción 
+                    </p>
+                 </div>
+
+                 <!-- Grupo terminos y condiciones-->
+                  <div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">
+                    <label class="formulario__label">
+                        <input type="checkbox" class="formulario__checkbox" name="terminos" id="terminos">
+                        <b class="formulario__span">Acepto los términos y condiciones</b>
+                    </label>
+                  </div>
+
+                  <!-- Grupo de campos requeridos-->
+                  <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class='bx bx-user-x'>Error: Debes completar todos los campos</i></p>
+                  </div>
+                  
+                  <!-- Grupo enviar-->
+                   <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+                        El formulario se envio correctamente
+                    </p>
+                    <button type="submit" class="formulario_registro__btn">
+                        <a href="#">Enviar</a>
+                   </div>
+                 
+
+            </form>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-contenedor">
+                <div class="footer-izq">
+                    <p class="footer-titulo">Municipalidad<br>Montes de Oca</p>
+                </div>
+                <div class="footer-centro">
+                    <a href="https://www.facebook.com/gobmontesdeoca/" target="_blank">
+                        <i class='bx bxl-facebook-square' ></i>   </a>
+                    <a href="https://www.instagram.com/gobmontesdeoca/" target="_blank">
+                        <i class='bx bxl-instagram-alt' ></i>  </a>
+                    <a href="https://www.youtube.com/channel/UCux4pfOGXArPst7ZyDjxpog" target="_blank">
+                        <i class='bx bxl-youtube' ></i>             </a>
+                    <a href="https://twitter.com/GobMontesDeOca" target="_blank">
+                        <i class='bx bxl-twitter' ></i> </a>
+                </div>
+                <div class="footer-der">
+                    <ul>
+                        <li>Home</li>
+                        <li>servicios</li>
+                        <li>Horario de atención:<br>
+                            Lunea a viernes
+                            8:00 AM - 4:00 PM
+                        </li>
+                        <li>   
+                            Central telefónica:
+                            2280-5589 / 2280-6034
+                            2280-4751 / 2280-5025
+                            2283-3845 / 2280-4894
+                            <br>
+                            Fax: 2281-2219
+                        </li>
+                        <li>
+                       Ubicanos en: C. 57, San José, San Pedro
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script src="registro.js"></script>
+    </body>
+</html>
