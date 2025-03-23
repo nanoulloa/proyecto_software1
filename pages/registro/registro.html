@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/proyecto_software1/css/registro.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Registro</title>
+    </head>
+    <body>
+        <div id="header_placeholder"></div>
+          
+        <main>
+
+            <form action="#" class="formulario__registro" id="formulario__registro">
+
+                 <div class="titulo_registro">
+                    <h1>Registro</h1>
+                 </div>
+
+                 <!-- Grupo Nombre-->
+                 <div class="formulario__grupo" id="grupo__nombre">
+                    <label class="formulario__label">Nombre completo</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        El nombre debe tener mínimo 3 letras y solo se admiten letras y espacios
+                    </p>
+                 </div>
+
+                 <!-- Grupo contrasena-->
+                 <div class="formulario__grupo" id="grupo__password">
+                    <label class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password" id="password">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        La contraseña debe ser de 4 a 12 dígitos
+                    </p>
+                 </div>
+
+                 <!-- Grupo contrasena2-->
+                 <div class="formulario__grupo" id="grupo__password2">
+                    <label class="formulario__label">Confirmar contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password2" id="password2">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        Las contraseñas no coinciden
+                    </p>
+                 </div>
+
+                 <!-- Grupo correo-->
+                 <div class="formulario__grupo" id="grupo__correo">
+                    <label class="formulario__label">Correo electronico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        Debe agregar un correo con la siguiente estructura dato1@dato2.com
+                        dato1 acepta letras, guion bajo y números
+                        dato2 acepta solo letras
+                    </p>
+                 </div>
+
+                 <!-- Grupo telefono-->
+                 <div class="formulario__grupo" id="grupo__telefono">
+                    <label class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="telefono" id="telefono">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        El número debe tener entre 8 y 11 dígitos
+                    </p>
+                 </div>
+
+                 <!-- Grupo Canton-->
+                 <div class="formulario__grupo" id="grupo__canton">
+                    <label class="formulario__label">Seleccione su cantón: </label>
+                    <div class="formulario__grupo-select">
+                        <select id="canton">
+                            <option value="null"></option>
+                            <option value="Montes de oca">Montes de Oca</option>
+                         </select> 
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>  
+                    </div>
+                    <p class="formulario__select-error">
+                        Debe de seleccionar al menos una opción 
+                    </p>
+                 </div>
+
+                 <!-- Grupo Distrito-->
+                 <div class="formulario__grupo" id="grupo__distrito">
+                    <label class="formulario__label">Seleccione su distrito: </label>
+                        <select id="distrito">
+                            <option value="null"></option>
+                            <option value="Individual">San Pedro</option>
+                            <option value="Individual">Sabanilla</option>
+                            <option value="Individual">Mercedes</option>
+                            <option value="Individual">San Rafael</option>
+                         </select> 
+                    <div class="formulario__grupo-select">
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i> 
+                    </div>
+                    <p class="formulario__select-error">
+                        Debe de seleccionar al menos una opción 
+                    </p>
+                 </div>
+
+                 <!-- Grupo terminos y condiciones-->
+                  <div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">
+                    <label class="formulario__label">
+                        <input type="checkbox" class="formulario__checkbox" name="terminos" id="terminos">
+                        <b class="formulario__span">Acepto los términos y condiciones</b>
+                    </label>
+                  </div>
+
+                  <!-- Grupo de campos requeridos-->
+                  <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class='bx bx-user-x'>Error: Debes completar todos los campos</i></p>
+                  </div>
+                  
+                  <!-- Grupo enviar-->
+                   <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+                        El formulario se envio correctamente
+                    </p>
+                    <button type="submit" class="formulario_registro__btn">Enviar
+                   </div>
+                 
+
+            </form>
+
+        </main>
+
+        <div id="footer_placeholder"></div>
+
+        <script src="/proyecto_software1/js/header_footer.js"></script> 
+        <script src="/proyecto_software1/js/registro.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    </body>
+
+    
+</html>
