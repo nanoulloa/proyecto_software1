@@ -159,34 +159,7 @@ input[type="submit"]:hover{
 
 /*RESPONSIVE*/
 
-@media (max-width: 800px) {
-    .footer-contenedor {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-centro {
-        margin: 10px 0;
-    }
-
-    .footer-der ul {
-        padding: 0;
-    }
-}
-
 @media (max-width: 1024px) {
-    .imagen_header {
-        margin-left: 20px;
-    }
-    
-    .opciones_header1 {
-        margin-right: 30px;
-    }
-    
-    .opciones2_header1 {
-        margin-right: 30px;
-    }
-    
     .formulario_inicio_sesion {
         margin-top: 40px;
     }
