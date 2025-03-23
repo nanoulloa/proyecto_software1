@@ -135,6 +135,11 @@ input[type="submit"]:hover{
     margin-left: 140px;
 }
 
+.google_social-icon-btn i.bx-bxl-google,
+.google_social-icon-btn i.bxl-google{
+  color: black; 
+}
+
 
 .registrarse{
     margin: 30px 0;
