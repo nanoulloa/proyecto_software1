@@ -26,57 +26,95 @@
             <div class="bloqueDeFondo">
                 <div class="foto_y_titulos">
                     <div class="foto_perfil">
-                        <img src="img/foto_perfil_usuario.png" alt="foto_perfil_usuario" height="150px" width="210px">
+                        <img src="img/user-circle-regular-96.png" alt="foto_perfil_usuario" height="150px" width="210px">
                     </div>
                     <div class="titulos_perfil_usuario">
                         <h1>Perfil de usuario</h1>
-                        <h2>correo@ejemplo.com</h2>
+                        <h2>Datos de la cuenta</h2>
                     </div>
                     <div><p></p></div>
                 </div>
                 
-                <div class="titulos_perfil_usuario">
-                    <h3>
-                        Cuenta
-                    </h3>
-                </div>
-                <div class="formulario_usuario">
+                
+                <div class="formulario_usuario" id="formulario_usuario">
                     <ul>
                         <li>
-                            <div class="grupo-form">
+                            <div class="grupo-form" id="grupo__usuario">
                                 <label for="usuario">Usuario:</label>
-                                <input type="usuario" name="usuario" placeholder="Juanito Perez Lopez">
+                                    <div class="formulario__grupo-input">
+                                        <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="usuario">
+                                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                                    </div>
+                                <p class="formulario__input-error">
+                                    EL usuario debe tener minimo 4 caracteres y maximo 16 y solo admite numeros, letras,guion y guion bajo.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form">
+                                <label for="password">Contrasena:</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="password" class="formulario__input" name="password" id="password" placeholder="**********">
+                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                                </div>
+                                <p class="formulario__input-error">
+                                    La contrasena debe ser de 4 a 12 digitos  
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form">
+                                <label class="formulario__label">Repetir contrasena</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="password" class="formulario__input" name="password2" id="password2" placeholder="**********">
+                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                                </div>
+                                <p class="formulario__input-error">
+                                    Las contrasenas no coinciden  
+                                </p>
                             </div>
                         </li>
                         <li>
                             <div class="grupo-form">
                                 <label for="correo">Correo:</label>
-                                <input type="email" name="correo" placeholder="correo@correo.com">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="grupo-form">
-                                <label for="contra">Contrasena:</label>
-                                <input type="password" name="contra" placeholder="*********" >
+                                <div class="formulario__grupo-input">
+                                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="ejemplo@correo.com">
+                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                                </div>
+                                <p class="formulario__input-error">
+                                    Debe agregr un correo con la siguiente estructura dato1@dato2.com
+                                    dato1 acepta letras, guion bajo y numeros
+                                    dato2 acepta solo letras
+                                </p>
                             </div>
                         </li>
                         <li>
                             <div class="grupo-form">
                                 <label for="Telefono">Telefono:</label>
-                                <input type="number" name="Telefono" placeholder="(506)8692-8484">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="grupo-form">
-                                <label for="Direcion">Direcion:</label>
-                                <input type="text" name="Direcion" placeholder="correo@correo.com">
+                                <div class="formulario__grupo-input">
+                                    <input type="number" class="formulario__input" name="telefono" id="telefono" placeholder="(506)8802-0987">
+                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                                </div>
+                                <p class="formulario__input-error">
+                                    El numero debe tener entre 8 y 11 digitos
+                                </p>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="contenedor_boton">
-                    <div class="boton">
-                        <a href="">Guardar cambios</a>
+                <!--Grupo campos requeridos-->
+                <div class="formulario__mensaje_perfil_usuario" id="formulario__mensaje_perfil_usuario">
+                    <p><i class='bx bx-error'></i>Error: alguno de los campos no cumple los requisitos</i></p>
+                </div>
+                <!--Grupo Enviar-->
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+                        El perfil de usuario se modifico correctamente
+                    </p> 
+                    <div class="contenedor_boton">
+                        <div class="boton">
+                            <input type="submit" class="formulario__btn" value="guardar cambios">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,5 +159,6 @@
         </div>
     </div>
 </footer>
+<script src="js/script_temporal.js"></script>
 </body>
 </html>
