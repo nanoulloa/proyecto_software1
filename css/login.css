@@ -193,36 +193,7 @@ input[type="submit"]:hover{
 }
 
 /*Para pantallas de tablets*/
-@media (max-width: 800px) {
-    .menu_principal {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 0;
-    }
-    
-    .logo_header {
-        flex: 1 0 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    
-    .imagen_header {
-        margin-left: 0;
-    }
-    
-    .opciones_header1 {
-        flex: 1 0 100%;
-        justify-content: center;
-        margin-right: 0;
-    }
-    
-    .opciones2_header1 {
-        display: flex;
-        justify-content: center;
-        margin-right: 0;
-        width: 100%;
-    }
-    
+@media (max-width: 800px) { 
     .formulario_inicio_sesion {
         width: 80%;
         max-width: 400px;
@@ -240,15 +211,6 @@ input[type="submit"]:hover{
 
 /*teléfonos en modo horizontal*/
 @media (max-width: 600px) {
-    .menu_principal1 {
-        padding: 10px 0;
-    }
-    
-    .elemento_menu1 {
-        margin: 5px;
-        padding: 8px;
-    }
-    
     .formulario_inicio_sesion {
         width: 90%;
         margin-top: 150px; 
@@ -265,30 +227,6 @@ input[type="submit"]:hover{
 
 /*Para pantallas de telefonos*/
 @media (max-width: 480px) {
-    .opciones_header1, .opciones2_header1 {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .opciones_header1 {
-        margin-top: 0;
-    }
-    
-    .opciones2_header1 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-    
-    .elemento_menu1 {
-        margin: 3px;
-        width: 80%;
-        text-align: center;
-    }
-    
-    .login_item {
-        margin-top: 5px;
-    }
-    
     .formulario_inicio_sesion {
         width: 95%;
         padding: 15px 0;
@@ -333,16 +271,6 @@ input[type="submit"]:hover{
 
 /*Para pantallas muy pequeñas*/
 @media (max-width: 320px) {
-    .menu_principal1 {
-        height: auto;
-        min-height: 100px;
-    }
-    
-    .elemento_menu {
-        padding: 6px;
-        margin: 2px;
-    }
-    
     .formulario {
         margin-top: 200px;
     }
