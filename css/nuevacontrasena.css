@@ -171,20 +171,3 @@ input[type="submit"]:hover{
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
-/*RESPONSIVE*/
-
-@media (max-width: 800px) {
-    .footer-contenedor {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-centro {
-        margin: 10px 0;
-    }
-
-    .footer-der ul {
-        padding: 0;
-    }
-}
