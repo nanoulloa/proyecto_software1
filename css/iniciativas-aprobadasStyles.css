@@ -6,69 +6,6 @@ body{
     text-decoration: none;
 }
 
-.menu_principal{
-    margin: 0;
-    padding: 0;
-}
-
-.menu_principal{
-    background-color: #0AB4FD;
-    width: auto;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.imagen{
-    width: 70px;
-    height: 70px;
-    margin-left: 40px;
-}
-
-.elemento_menu{
-    margin: auto;
-    padding: 10px 0;
-    transition: .1s;
-}
-
-.elemento_menu{
-    list-style: none;
-    padding: 10px;
-    margin: 12px;
-}
-
-.opciones{
-    display: flex;
-    list-style: none;
-    height: auto;
-    padding-right: 0;
-    margin-right: 50px;
-    margin-top: 5px;
-}
-
-.elemento_menu:hover{
-    background-color: skyblue;
-    border-radius: 20px;
-}
-
-.elemento_menu ul{
-    position: absolute;
-    display: none;
-}
-
-.elemento_menu:hover > ul{
-    display: block;
-}
-
-.login_item{
-    background-color: white;
-    border-radius: 20px;
-}
-
-.opciones .elemento_menu:last-child a {
-    color: black;
-}
-
 /* header mariano*/
 
 .iniciativas-container {
