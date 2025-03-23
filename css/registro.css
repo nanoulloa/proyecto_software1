@@ -250,7 +250,7 @@ main{
     text-align: center;
 }
 
-.formulario_registro__btn a{
+.formulario_registro__btn{
     color: white; 
     text-decoration: none;
 }
