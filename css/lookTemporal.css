@@ -1,5 +1,4 @@
 a:-webkit-any-link{
-    text-decoration: none;
     color: black;
 }
 body{
@@ -267,55 +266,6 @@ body{
 }
 
 
-/*contenido del footer*/
-.footer {
-    margin-top: 25px;
-    background-color: #00AEEF;
-    padding: 20px;
-}
-
-.footer-contenedor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.footer-izq, .footer-der {
-    color: white;
-}
-
-.footer-titulo {
-    font-size: 18px;
-    text-transform: lowercase;
-}
-
-.footer-centro a {
-    margin: 0 10px;
-    text-decoration: none;
-
-}
-
-.footer-centro i {
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    color: black;
-
-}
-
-.footer-der ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-}
-
-.footer-der li {
-    color: white;
-    text-transform: lowercase;
-}
 
 @media (max-width: 800px) {
     .footer-contenedor {

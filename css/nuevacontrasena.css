@@ -8,8 +8,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    color: black;
 }
 
 .nueva_contrasena__grupo-input {
