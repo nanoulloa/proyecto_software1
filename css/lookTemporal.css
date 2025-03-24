@@ -1,3 +1,4 @@
+
 a:-webkit-any-link{
     color: black;
     text-decoration: none;
@@ -318,6 +319,8 @@ body{
 }
 
 @media (max-width: 800px) {
+    .subcontenido_home_countainer{
+        display: block;
     }
     .botones_menu_principal{
         padding: 0px;
@@ -333,3 +336,5 @@ body{
         display: block;
         text-align: center;
     }
+
+}
