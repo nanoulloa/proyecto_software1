@@ -93,9 +93,6 @@ header {
     border: 2px solid #ffcc00;
 }
 
-
-
-
  /* Estilos del Footer */
  .footer {
     background: #0AB4FD;
@@ -152,3 +149,41 @@ header {
     color: #ffcc00;
 }
 
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo_header {
+        margin-bottom: 15px;
+    }
+    
+    .opciones {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .elemento_menu {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+    
+    .elemento_menu a {
+        display: block;
+        padding: 8px 0;
+    }
+    
+    .dropdown_menu {
+        position: static;
+        width: 100%;
+        margin-top: 8px;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+    
