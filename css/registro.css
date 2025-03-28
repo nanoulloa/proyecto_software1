@@ -10,9 +10,9 @@
 
 main{
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     margin: 25px auto;
-    border: 2px solid skyblue;
+    border: 1px solid rgb(0, 0, 0);
     padding: 10px 40px;
     border-radius: 10px;
     box-shadow: 0 2px 10px white;
@@ -25,7 +25,8 @@ main{
 }
 
 .titulo_registro h1 {
-    padding: 10px 0;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid black;
 }
 
 .formulario__registro{
@@ -50,14 +51,14 @@ main{
 .formulario__input{
     width: 50%;
     background: white;
-    border-bottom: 2px solid rgb(87, 206, 227);
-    border-right: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
     color:black;
     font-size: 17px;
     padding: 0 10px;
     transition: all 1s;
     line-height: 45px;
     outline: none;
+    border-radius: 2px;
 }
 
 .formulario__grupo-input{
@@ -67,7 +68,7 @@ main{
 #canton{
     width: 50%;
     background: white;
-    border-bottom: 2px solid rgb(87, 206, 227);
+    border-bottom: 2px solid rgb(0, 0, 0);
     border-right: none;
     color:black;
     font-size: 17px;
@@ -81,7 +82,7 @@ main{
 #distrito{
     width: 50%;
     background: white;
-    border-bottom: 2px solid rgb(87, 206, 227);
+    border-bottom: 2px solid rgb(0, 0, 0);
     border-right: none;
     color:black;
     font-size: 17px;
@@ -105,11 +106,6 @@ main{
     right: 45px;
     font-size: 20px;
     opacity: 0;
-}
-
-.formulario__input:focus{
-    box-shadow: 0 0 5px rgb(87, 206, 227);
-    border-radius: 10px;
 }
 
 .formulario__input-error{
@@ -183,11 +179,14 @@ main{
 }
 
 .formulario_registro__btn{
-    padding: 15px 35px;
-    background-color: black;
+    font-size: 18px;
+    font-weight: bold;
+    width: 25%;
+    height: 50px;
+    border: 1px solid;
+    background-color: skyblue;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     transition: .5s;
 }

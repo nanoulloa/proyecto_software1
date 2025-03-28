@@ -8,21 +8,18 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: black;
 }
 
-.text_nuevacontrasena{
-    text-align: center;
-    padding: 10px 20px;
-}
-
-.nueva_contrasena__grupo-input {
+.autenticacion__grupo-input {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-.nueva_contrasena__grupo-input input {
+.autenticacion__grupo-input input {
     width: 100%;
     height: 40px;
     font-size: 16px;
@@ -30,25 +27,26 @@ body{
     background-color: white;
 }
 
-.nueva_contrasena__grupo-input i.bxs-x-circle {
+.autenticacion__grupo-input i.bxs-x-circle {
     position: absolute;
     right: 10px;
     pointer-events: none;
 }
 
-.contenedor_nueva_contrasena {
+.contenedor_autenticacion {
     position: relative;
-    
+    flex: 1;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 40px 0; 
-    margin-top: 30px;
+    align-items: center;
+    padding: 50px 0; 
 }
 
-.formulario_nueva_contrasena{
+.formulario_autenticacion{
     width: 400px;
     border-radius: 10px;
     padding: 4px;
@@ -56,23 +54,23 @@ body{
     border: 1px solid black;
 }
 
-.formulario_nueva_contrasena h1{
+.formulario_autenticacion h1{
     text-align: center;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid black;
 }
 
-.formulario_nueva_contrasena form{
+.formulario_autenticacion form{
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-form .nueva_contrasena{
+form .autenticacion{
     position: relative;
     margin: 30px 0;
 }
 
-.nueva_contrasena input{
+.autenticacion input{
     width: 100%;
     padding: 0 5px;
     height: 40px;
@@ -107,15 +105,13 @@ input[type="submit"]:hover{
     transition: .5s;
 }
 
-.nueva_contrasena__input-error{
+.autenticacion__input-error {
     margin-bottom: 30px; 
     color: red;
     font-size: 16px;
-    margin-bottom: 0;
-    display: none;
 }
 
-.btn-continuar_cotrasena{
+.btn-continuar_autenticacion{
     width: 100%;
     padding: 12px 0;
     background-color: #7DCEF3; 
@@ -129,22 +125,22 @@ input[type="submit"]:hover{
     margin-bottom: 15px; 
 }
 
-.btn-continuar_cotrasena a{
+.btn-continuar_autenticacion a {
     color: white; 
     text-decoration: none;
 }
 
-.nueva_contrasena-correcto .nueva_contrasena__grupo-input i{
+.autenticacion-correcto .autenticacion__grupo-input i {
     color: #1ed12d;
     opacity: 1;
 }
 
-.nueva_contrasena-incorrecto .nueva_contrasena__grupo-input i{
+.autenticacion-incorrecto .autenticacion__grupo-input i {
     color: #bb2929;
     opacity: 1;
 }
 
-.nueva_contrasena__grupo-input i{
+.autenticacion__grupo-input i {
     position: absolute;
     right: 10px;
     bottom: 13px;
@@ -153,25 +149,17 @@ input[type="submit"]:hover{
     opacity: 0;
 }
 
-.nueva_contrasena__input-error{
+.autenticacion__input-error {
     font-size: 15px;
     margin-bottom: 0;
     display: none;
 }
 
-.nueva_contrasena__input-error-activo{
+.autenticacion__input-error-activo {
     display: block;
-    margin-top: 8px;
-    margin-bottom: 12px;
 }
 
-.label_contrasena{
-    margin-top: 20px;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.formulario_nueva_contrasena{
+.formulario_autenticacion {
     background-color: #D9D9D9;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);

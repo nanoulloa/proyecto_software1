@@ -12,6 +12,11 @@ body{
     color: black;
 }
 
+.text_recuperacion{
+    text-align: center;
+    padding: 10px 20px;
+}
+
 .recuperacion__grupo-input {
     position: relative;
     display: flex;
