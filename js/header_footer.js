@@ -1,3 +1,5 @@
+
+/*
 document.addEventListener("DOMContentLoaded", function () {
     function loadComponent(id, file) {
         fetch(file)
@@ -34,7 +36,7 @@ document.getElementById("logout_button").addEventListener("click", function() {
 
     // Cambiar el header inmediatamente en la página actual
     loadComponent("header_placeholder", regresarHeader);
-});
+}); */
   
 /*document.addEventListener("DOMContentLoaded", function () {
     function loadComponent(id, file) {
@@ -65,3 +67,48 @@ document.getElementById("logout_button").addEventListener("click", function() {
     loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
 });*/
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    function loadComponent(id, file, callback) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+                if (callback) callback(); // Ejecuta un callback después de cargar el componente
+            })
+            .catch(error => console.error(`Error cargando ${file}:`, error));
+    }
+
+    window.loadComponent = loadComponent; 
+
+    let headerFile = localStorage.getItem("headerFile") || "/proyecto_software1/componentes/header.html";
+
+    // Cargar el footer sin callback
+    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
+
+    // Cargar el header y asignar los event listeners después de cargarlo
+    loadComponent("header_placeholder", headerFile, function() {
+        assignEventListeners(); // Llamar después de cargar el header
+    });
+});
+
+function assignEventListeners() {
+    let btnRegistro = document.getElementById("btnRegistro");
+    let logoutButton = document.getElementById("logout_button");
+
+    if (btnRegistro) {
+        btnRegistro.addEventListener("click", function() {
+            let nuevoHeader = "/proyecto_software1/componentes/header_ingresado.html";
+            localStorage.setItem("headerFile", nuevoHeader);
+            loadComponent("header_placeholder", nuevoHeader, assignEventListeners);
+        });
+    }
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function() {
+            let regresarHeader = "/proyecto_software1/componentes/header.html";
+            localStorage.setItem("headerFile", regresarHeader);
+            loadComponent("header_placeholder", regresarHeader, assignEventListeners);
+        });
+    }
+}

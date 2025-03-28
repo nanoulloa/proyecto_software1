@@ -1,3 +1,5 @@
+
+
 //GUARDAMOS HTML CON EL DOC//
 const $inputs = document.querySelectorAll('#formulario__registro input');
 const $select = document.querySelectorAll('#formulario__registro select');
@@ -183,3 +185,4 @@ window.addEventListener('DOMContentLoaded', () => {
     cantonSelect.value = "null";
     distritoSelect.value = "null";
 });
+
