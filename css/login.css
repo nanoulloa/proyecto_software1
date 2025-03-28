@@ -64,7 +64,6 @@ form .inicio_sesion{
 }
 
 .inicio_sesion span::before{
-    content: '';
     position: absolute;
     top: 40px;
     left: 0;

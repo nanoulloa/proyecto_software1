@@ -168,7 +168,7 @@ $formulario.addEventListener("submit", (e) => {
         document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
 
         setTimeout(() => {
-            location.reload();
+            window.location.href = "/proyecto_software1/autenticacionlogin.html";
         }, 4000);
     } else {
         document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
