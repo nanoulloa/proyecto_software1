@@ -28,6 +28,18 @@ main {
     margin: 30px auto;
     padding: 20px;
 }
+.contact-section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+.contact-section iframe{
+    max-width: 100%;
+    width: 1300px;
+    height: 400px;
+}
 
 /* Estilos del Directorio */
 
