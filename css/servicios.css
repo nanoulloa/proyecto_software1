@@ -40,7 +40,7 @@ body {
     font-size: 16px;
 }
 .descrip{
-    opacity: 0;
+    opacity: .3;
     transition: opacity .2s  ease-in-out .6s;
 }
 .servicio:hover .descrip{
