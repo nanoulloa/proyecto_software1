@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva contraseña</title>
+    <link rel="stylesheet" href="/proyecto_software1/css/nuevacontrasena.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="header_placeholder"></div>
+
+    <div class="contenedor_nueva_contrasena">
+    <div class="formulario_nueva_contrasena">
+        <h1>Crear nueva contraseña</h1>
+        <p>Solicitaremos esta contraseña cada vez que inicies sesión.</p>
+        <form method="post">
+            <div class="nueva_contrasena" id="grupo_nueva_contrasena">
+                <label class="label_contrasena">Nueva contraseña</label>
+                <div class="nueva_contrasena__grupo-input">
+                    <input type="password" class="nueva_contrasena" name="contrasena_nueva" id="contrasena_nueva">
+                    <i class='nueva_contrasena bx bxs-x-circle'></i>
+                </div>
+                <p class="nueva_contrasena__input-error">
+                    La contraseña debe ser de 4 a 12 dígitos
+                </p>
+                <label class="label_contrasena">Nueva contraseña</label>
+                <div class="nueva_contrasena__grupo-input">
+                    <input type="password" class="nueva_contrasena" name="contrasena_nueva" id="contrasena_nueva">
+                    <i class='nueva_contrasena bx bxs-x-circle'></i>
+                </div>
+                <p class="nueva_contrasena__input-error">
+                    Las contraseñas no coinciden
+                </p>
+                <button type="submit" class="btn-continuar_cotrasena">Guardar los cambios e iniciar sesión
+                </button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <div id="footer_placeholder"></div>
+
+    <script src="/proyecto_software1/js/header_footer.js"></script>
+    <script src="/proyecto_software1/js/nuevacontrasena.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

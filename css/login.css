@@ -1,8 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    font-family: 'Poppins', sans-serif;
 }
 
 *{
@@ -10,98 +9,11 @@ body{
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: black;
-}
-
-/*CONTENIDO DE HEADER*/
-
-.menu_principal{
-    margin: 0;
-    padding: 0;
-}
-
-.menu_principal{
-    background-color: #0AB4FD;
-    width: auto;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-}
-
-.logo_header{
-    flex: 1;
-}
-
-.imagen{
-    width: 70px;
-    height: 70px;
-    margin-left: 40px;
-}
-
-.elemento_menu{
-    margin: auto;
-    padding: 10px 0;
-    transition: .1s;
-}
-
-.elemento_menu{
-    list-style: none;
-    padding: 10px;
-    margin: 12px;
-}
-
-.opciones{
-    text-decoration: none;
-    color: black;
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    height: auto;
-    margin-right: 60px;
-    margin-top: 5px;
-}
-
-.opciones2{
-    text-decoration: none;
-    color: black;
-    display: flex;
-    list-style: none;
-    height: auto;
-    padding-right: 0;
-    margin-right: 50px;
-    margin-top: 5px;
-}
-
-.elemento_menu:hover{
-    background-color: skyblue;
-    border-radius: 20px;
-}
-
-.elemento_menu ul{
-    position: absolute;
-    display: none;
-}
-
-.elemento_menu:hover > ul{
-    display: block;
-}
-
-.login_item{
-    background-color: white;
-    border-radius: 20px;
-}
-
-.login_item .enlace_menu {
-    color: black;
 }
 
 /*FORMULARIO*/
 
-.formulario{
-    position: absolute;
+.formulario_inicio_sesion{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50px);
@@ -109,26 +21,28 @@ body{
     background: #D9D9D9;
     border-radius: 10px;
     z-index: 5;
+    padding: 4px;
+    margin-bottom: 4%;
 }
 
-.formulario h1{
+.formulario_inicio_sesion h1{
     text-align: center;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid black;
 }
 
-.formulario form{
+.formulario_inicio_sesion form{
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-form .username{
+form .inicio_sesion{
     position: relative;
     border-bottom: 2px solid black;
     margin: 30px 0;
 }
 
-.username input{
+.inicio_sesion input{
     width: 100%;
     padding: 0 5px;
     height: 40px;
@@ -138,7 +52,7 @@ form .username{
     outline: none;
 }
 
-.username label{
+.inicio_sesion label{
     position: absolute;
     top: 50%;
     left: 5px;
@@ -149,8 +63,7 @@ form .username{
     transition: .5s;
 }
 
-.username span::before{
-    content: '';
+.inicio_sesion span::before{
     position: absolute;
     top: 40px;
     left: 0;
@@ -160,20 +73,20 @@ form .username{
     transition: .5s;
 }
 
-.username input:focus ~ label,
-.username input:focus ~ label{
+.inicio_sesion input:focus ~ label,
+.inicio_sesion input:focus ~ label{
     top: -5px;
     color: #adadad; 
 }
 
-.username input:focus ~ span::before,
-.username input:focus ~ span::before{
+.inicio_sesion input:focus ~ span::before,
+.inicio_sesion input:focus ~ span::before{
     width: 100%;
 }
 
 .recordar{
     margin: -5px 0 20px 5px;
-    color: blue;
+    color: black;
     cursor: pointer;
 }
 
@@ -194,7 +107,7 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-    border-color: skyblue;
+    border-color: #7DCEF3;
     transition: .5s;
 }
 
@@ -207,7 +120,7 @@ input[type="submit"]:hover{
     outline: none;
 }
 
-.social-icon-btn{
+.google_social-icon-btn{
     display: block;
     font-size: 24px;
     padding: 5px;
@@ -220,6 +133,12 @@ input[type="submit"]:hover{
     max-width: 50px;
     margin-left: 140px;
 }
+
+.google_social-icon-btn i.bx-bxl-google,
+.google_social-icon-btn i.bxl-google{
+  color: black; 
+}
+
 
 .registrarse{
     margin: 30px 0;
@@ -239,56 +158,25 @@ input[type="submit"]:hover{
 
 /*RESPONSIVE*/
 
-@media (max-width: 1024px) {
-    .imagen {
-        margin-left: 20px;
+@media (max-width: 2000px) { 
+    .formulario_inicio_sesion {
+        width: 80%;
+        max-width: 400px;
+        margin-top: 120px;
+        position: relative;
+        top: 0;
+        transform: translateX(-50%);
     }
     
-    .opciones {
-        margin-right: 30px;
-    }
-    
-    .opciones2 {
-        margin-right: 30px;
-    }
-    
-    .formulario {
-        margin-top: 40px;
+    .social-icon-btn {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 /*Para pantallas de tablets*/
-@media (max-width: 800px) {
-    .menu_principal {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 0;
-    }
-    
-    .logo_header {
-        flex: 1 0 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    
-    .imagen {
-        margin-left: 0;
-    }
-    
-    .opciones {
-        flex: 1 0 100%;
-        justify-content: center;
-        margin-right: 0;
-    }
-    
-    .opciones2 {
-        display: flex;
-        justify-content: center;
-        margin-right: 0;
-        width: 100%;
-    }
-    
-    .formulario {
+@media (max-width: 800px) { 
+    .formulario_inicio_sesion {
         width: 80%;
         max-width: 400px;
         margin-top: 120px;
@@ -305,21 +193,12 @@ input[type="submit"]:hover{
 
 /*teléfonos en modo horizontal*/
 @media (max-width: 600px) {
-    .menu_principal {
-        padding: 10px 0;
-    }
-    
-    .elemento_menu {
-        margin: 5px;
-        padding: 8px;
-    }
-    
-    .formulario {
+    .formulario_inicio_sesion {
         width: 90%;
         margin-top: 150px; 
     }
     
-    .formulario form {
+    .formulario_inicio_sesion form {
         padding: 0 20px;
     }
     
@@ -330,38 +209,14 @@ input[type="submit"]:hover{
 
 /*Para pantallas de telefonos*/
 @media (max-width: 480px) {
-    .opciones, .opciones2 {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .opciones {
-        margin-top: 0;
-    }
-    
-    .opciones2 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-    
-    .elemento_menu {
-        margin: 3px;
-        width: 80%;
-        text-align: center;
-    }
-    
-    .login_item {
-        margin-top: 5px;
-    }
-    
-    .formulario {
+    .formulario_inicio_sesion {
         width: 95%;
         padding: 15px 0;
         margin-top: 180px;
         position: relative;
     }
     
-    .formulario h1 {
+    .formulario_inicio_sesion h1 {
         font-size: 22px;
         padding-bottom: 15px;
     }
@@ -398,16 +253,6 @@ input[type="submit"]:hover{
 
 /*Para pantallas muy pequeñas*/
 @media (max-width: 320px) {
-    .menu_principal {
-        height: auto;
-        min-height: 100px;
-    }
-    
-    .elemento_menu {
-        padding: 6px;
-        margin: 2px;
-    }
-    
     .formulario {
         margin-top: 200px;
     }
@@ -441,10 +286,11 @@ input[type="submit"]:hover{
         height: auto;
     }
     
-    .formulario {
+    .formulario_inicio_sesion {
         position: relative;
         top: 0;
         transform: translateX(-50%);
-        margin-top: 180px;
+        margin-top: 50px;
     }
 }
+
