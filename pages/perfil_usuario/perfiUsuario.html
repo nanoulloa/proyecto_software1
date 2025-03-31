@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de usuario</title>
-    <link rel="stylesheet" type="text/css" href="../../css/lookTemporal.css">
+    <link rel="stylesheet" type="text/css" href="../../frontend/public/css/lookTemporal.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <div class="bloqueDeFondo">
                 <div class="foto_y_titulos">
                     <div class="foto_perfil">
-                        <img src="../../img/user-circle-regular-96.png" alt="foto_perfil_usuario">
+                        <img src="../../frontend/public/img/user-circle-regular-96.png" alt="foto_perfil_usuario">
                     </div>
                     <div class="titulos_perfil_usuario">
                         <h1>Perfil de usuario</h1>
@@ -64,6 +64,24 @@
                                 </p>
                             </div>
                         </li>
+                        <li>
+                            <div class="grupo-form" id="grupo__distrito">
+                                <label class="formulario__label">Seleccione su distrito: </label>
+                                    <select id="distrito">
+                                        <option value="null"></option>
+                                        <option value="Individual">San Pedro</option>
+                                        <option value="Individual">Sabanilla</option>
+                                        <option value="Individual">Mercedes</option>
+                                        <option value="Individual">San Rafael</option>
+                                     </select> 
+                                <div class="formulario__grupo-select">
+                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i> 
+                                </div>
+                                <p class="formulario__input-error">
+                                    Debe de seleccionar al menos una opción 
+                                </p>
+                             </div>
+                        </li>
                     </ul>
                 </div>
                 <!--Grupo campos requeridos-->
@@ -91,6 +109,6 @@
 <script src="js/header_footer.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
-<script src="../../js/script_temporal.js"></script>
+<script src="../../frontend/public/js/script_temporal.js"></script>
 </body>
 </html>
