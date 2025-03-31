@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de usuario</title>
-    <link rel="stylesheet" type="text/css" href="/proyecto_software1/css/lookTemporal.css">
+    <link rel="stylesheet" type="text/css" href="../../css/lookTemporal.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <div class="bloqueDeFondo">
                 <div class="foto_y_titulos">
                     <div class="foto_perfil">
-                        <img src="/proyecto_software1/img/user-circle-regular-96.png" alt="foto_perfil_usuario">
+                        <img src="../../img/user-circle-regular-96.png" alt="foto_perfil_usuario">
                     </div>
                     <div class="titulos_perfil_usuario">
                         <h1>Perfil de usuario</h1>
@@ -41,44 +41,6 @@
                             </div>
                         </li>
                         <li>
-                            <div class="grupo-form" id="grupo__password">
-                                <label for="password">Contrasena:</label>
-                                <div class="formulario__grupo-input">
-                                    <input type="password" class="formulario__input" name="password" id="password" placeholder="**********">
-                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
-                                </div>
-                                <p class="formulario__input-error">
-                                    La contrasena debe ser de 4 a 12 digitos  
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="grupo-form" id="grupo__password2">
-                                <label class="formulario__label">Repetir contrasena</label>
-                                <div class="formulario__grupo-input">
-                                    <input type="password" class="formulario__input" name="password2" id="password2" placeholder="**********">
-                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
-                                </div>
-                                <p class="formulario__input-error">
-                                    Las contrasenas no coinciden  
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="grupo-form" id="grupo__correo">
-                                <label for="correo">Correo:</label>
-                                <div class="formulario__grupo-input">
-                                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="ejemplo@correo.com">
-                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
-                                </div>
-                                <p class="formulario__input-error">
-                                    Debe agregr un correo con la siguiente estructura dato1@dato2.com
-                                    dato1 acepta letras, guion bajo y numeros
-                                    dato2 acepta solo letras
-                                </p>
-                            </div>
-                        </li>
-                        <li>
                             <div class="grupo-form" id="grupo__telefono">
                                 <label for="Telefono">Telefono:</label>
                                 <div class="formulario__grupo-input">
@@ -87,6 +49,18 @@
                                 </div>
                                 <p class="formulario__input-error">
                                     El numero debe tener entre 8 y 11 digitos
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grupo-form" id="grupo__direcion_exacta">
+                                <label for="direcion_exacta">Direcion Exacta:</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="direcion_exacta" class="formulario__input" name="direcion_exacta" id="direcion_exacta" placeholder="direcion">
+                                    <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                                </div>
+                                <p class="formulario__input-error">
+                                    la direcion tiene un maximo de 500 digitos  
                                 </p>
                             </div>
                         </li>
@@ -114,7 +88,7 @@
    
    <div id="footer_placeholder"></div>
 
-<script src="/proyecto_software1/js/header_footer.js"></script>
+<script src="js/header_footer.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 <script src="../../js/script_temporal.js"></script>

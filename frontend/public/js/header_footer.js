@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.loadComponent = loadComponent; 
 
-    let headerFile = localStorage.getItem("headerFile") || "/proyecto_software1/componentes/header.html";
+    let headerFile = localStorage.getItem("headerFile") || "componentes/header.html";
 
 
-    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
+    loadComponent("footer_placeholder", "componentes/footer.html");
     loadComponent("header_placeholder", headerFile);
 });
 
 
 document.getElementById("btnRegistro").addEventListener("click", function() {
-    let nuevoHeader = "/proyecto_software1/componentes/header_ingresado.html";
+    let nuevoHeader = "componentes/header_ingresado.html";
 
     // Guardar en LocalStorage
     localStorage.setItem("headerFile", nuevoHeader);
@@ -29,7 +29,7 @@ document.getElementById("btnRegistro").addEventListener("click", function() {
 });
 
 document.getElementById("logout_button").addEventListener("click", function() {
-    let regresarHeader = "/proyecto_software1/componentes/header.html";
+    let regresarHeader = "componentes/header.html";
 
     // Guardar en LocalStorage
     localStorage.setItem("headerFile", regresarHeader);
@@ -52,19 +52,19 @@ document.getElementById("logout_button").addEventListener("click", function() {
         if (logoutButton) {
             logoutButton.addEventListener("click", function () {
                 localStorage.removeItem("userLoggedIn"); // Elimina sesión
-                loadComponent("header_placeholder", "/proyecto_software1/componentes/header.html"); // Carga el header original
+                loadComponent("header_placeholder", "componentes/header.html"); // Carga el header original
             });
         }
     }
 
     // Verifica si el usuario está logueado
     if (localStorage.getItem("userLoggedIn")) {
-        loadComponent("header_placeholder", "/proyecto_software1/componentes/header_logged.html"); // Header con sesión iniciada
+        loadComponent("header_placeholder", "componentes/header_logged.html"); // Header con sesión iniciada
     } else {
-        loadComponent("header_placeholder", "/proyecto_software1/componentes/header.html"); // Header normal
+        loadComponent("header_placeholder", "componentes/header.html"); // Header normal
     }
 
-    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
+    loadComponent("footer_placeholder", "componentes/footer.html");
 });*/
 
 
@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.loadComponent = loadComponent; 
 
-    let headerFile = localStorage.getItem("headerFile") || "/proyecto_software1/componentes/header.html";
+    let headerFile = localStorage.getItem("headerFile") || "componentes/header.html";
 
     // Cargar el footer sin callback
-    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
+    loadComponent("footer_placeholder", "componentes/footer.html");
 
     // Cargar el header y asignar los event listeners después de cargarlo
     loadComponent("header_placeholder", headerFile, function() {
@@ -98,7 +98,7 @@ function assignEventListeners() {
 
     if (btnRegistro) {
         btnRegistro.addEventListener("click", function() {
-            let nuevoHeader = "/proyecto_software1/componentes/header_ingresado.html";
+            let nuevoHeader = "componentes/header_ingresado.html";
             localStorage.setItem("headerFile", nuevoHeader);
             loadComponent("header_placeholder", nuevoHeader, assignEventListeners);
         });
@@ -106,7 +106,7 @@ function assignEventListeners() {
 
     if (logoutButton) {
         logoutButton.addEventListener("click", function() {
-            let regresarHeader = "/proyecto_software1/componentes/header.html";
+            let regresarHeader = "componentes/header.html";
             localStorage.setItem("headerFile", regresarHeader);
             loadComponent("header_placeholder", regresarHeader, assignEventListeners);
         });
