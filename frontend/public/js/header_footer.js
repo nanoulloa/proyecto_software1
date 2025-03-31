@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let headerFile = localStorage.getItem("headerFile") || "componentes/header.html";
 
     // Cargar el footer sin callback
-    loadComponent("footer_placeholder", "componentes/footer.html");
+    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
 
     // Cargar el header y asignar los event listeners después de cargarlo
     loadComponent("header_placeholder", headerFile, function() {
