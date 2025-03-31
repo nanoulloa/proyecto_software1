@@ -1,0 +1,44 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+
+.input-container {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icon {
+    margin-left: 10px; /* Espacio entre el campo y el icono */
+    font-size: 20px;
+    display: inline; /* Siempre visible */
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0AB4FD;
+}
