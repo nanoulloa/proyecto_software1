@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/proyecto_software1/css/registro.css">
+        <link rel="stylesheet" href="/proyecto_software1/frontend/public/css/registro.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <title>Registro</title>
@@ -114,6 +114,18 @@
                     </p>
                  </div>
 
+                 <!-- Grupo Direccion-->
+                 <div class="formulario__grupo" id="grupo__direccion">
+                    <label class="formulario__label">Dirección exacta</label>
+                    <div class="formulario__grupo-input">
+                        <textarea name="direccion" id="direccion"></textarea>
+                        <i class='formulario__validacion-estado bx bxs-x-circle'></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        La dirección debe tener mínimo 30 letras 
+                    </p>
+                 </div>
+
                  <!-- Grupo terminos y condiciones-->
                   <div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">
                     <label class="formulario__label">
@@ -142,9 +154,8 @@
 
         <div id="footer_placeholder"></div>
 
-        <script src="/proyecto_software1/js/header_footer.js"></script> 
-        <script src="/proyecto_software1/js/header_footer.js"></script>
-        <script src="/proyecto_software1/js/registro.js"></script>
+        <script src="/proyecto_software1/frontend/public/js/header_footer.js"></script> 
+        <script src="/proyecto_software1/frontend/public/js/registro.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
     </body>

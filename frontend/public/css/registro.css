@@ -99,6 +99,17 @@ main{
     border-radius: 10px;
 }
 
+#direccion{
+    resize: none;
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    border-bottom: 2px solid rgb(87, 206, 227);
+    border-right: none;
+    color:black;
+    font-size: 16px;
+}
+
 .formulario__validacion-estado{
     position: absolute;
     bottom: 15px;

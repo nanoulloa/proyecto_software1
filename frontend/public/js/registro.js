@@ -3,6 +3,7 @@
 //GUARDAMOS HTML CON EL DOC//
 const $inputs = document.querySelectorAll('#formulario__registro input');
 const $select = document.querySelectorAll('#formulario__registro select');
+const $textareas = document.querySelectorAll('#formulario__registro textarea');
 const $formulario = document.getElementById('formulario__registro');
 
 // EXPRESIONES REGULARES
@@ -12,6 +13,7 @@ const expresiones ={
     password: /^.{4,12}$/,
     correo: /^[a-zA-Z0-9\_]+@[a-zA-Z]+\.[a-zA-Z]+$/,
     telefono: /^\d{8,11}$/,
+    direccion: /^[a-zA-ZÀ-ÿ\s]{30,100}$/
 }
 
 //Objeto CAMPOS
@@ -21,6 +23,7 @@ const campos={
     password: false,
     correo: false,
     telefono: false,
+    direccion: false,
     canton: false,
     distrito: false,
 }
@@ -99,6 +102,9 @@ const validarFormulario = (e) => {
         case "telefono":
             validarCampo(expresiones.telefono, e.target, "telefono");
             break;
+            case "direccion":
+            validarCampo(expresiones.direccion, e.target, "direccion");
+            break;
     }
 }
 
@@ -146,6 +152,11 @@ $inputs.forEach((input) => {
     input.addEventListener("blur", validarFormulario);
 });
 
+$textareas.forEach((textarea) => {
+    textarea.addEventListener("keyup", validarFormulario);
+    textarea.addEventListener("blur", validarFormulario);
+});
+
 
 document.getElementById('canton').addEventListener('change', () => {
     actualizarDistritos();
@@ -160,7 +171,6 @@ $formulario.addEventListener("submit", (e) => {
 
     const $terminos = document.getElementById("terminos");
     
-
     validarSelect('canton');
     validarSelect('distrito');
     
