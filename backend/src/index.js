@@ -19,4 +19,3 @@ app.get("/noticias",(req,res)=>{
     res.send("/")
 });
 
-console.log(__dirname)
