@@ -12,6 +12,11 @@ body{
     color: black;
 }
 
+.text_autenticacion {
+    text-align: center;
+    padding: 10px 20px; 
+}
+
 .recuperacion_autenticacion__grupo-input {
     position: relative;
     display: flex;

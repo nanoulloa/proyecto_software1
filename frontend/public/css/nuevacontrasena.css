@@ -10,6 +10,11 @@ body{
     box-sizing: border-box;
 }
 
+.text_nuevacontrasena{
+    text-align: center;
+    padding: 10px 20px;
+}
+
 .nueva_contrasena__grupo-input {
     position: relative;
     display: flex;
@@ -33,7 +38,6 @@ body{
 
 .contenedor_nueva_contrasena {
     position: relative;
-    
     width: 100%;
     height: auto;
     display: flex;
