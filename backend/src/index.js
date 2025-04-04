@@ -1,21 +1,14 @@
 const express = require('express');
-
 const app = express();
-const path = require('path')
+const path = require('path');
 
-//Encender servidor
+app.use(express.static(path.join(__dirname, '../../frontend/public')));
 
-app.listen(3000,()=>{
-    console.log("Se conecto el puerto")
-})
-
-//Rutas
-
-app.get("/",(req,res)=>{
-    res.send("Hola")
+app.listen(3000, () => {
+    console.log("Servidorse conectó");
 });
 
-app.get("/noticias",(req,res)=>{
-    res.send("/")
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/pages/index.html'));
 });
 

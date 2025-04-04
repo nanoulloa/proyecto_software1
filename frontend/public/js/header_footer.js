@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.loadComponent = loadComponent; 
 
-    let headerFile = localStorage.getItem("headerFile") || "componentes/header.html";
+    let headerFile = localStorage.getItem("headerFile") || "../componentes/header.html";
 
     // Cargar el footer sin callback
-    loadComponent("footer_placeholder", "/proyecto_software1/componentes/footer.html");
+    loadComponent("footer_placeholder", "../componentes/footer.html");
 
     // Cargar el header y asignar los event listeners después de cargarlo
     loadComponent("header_placeholder", headerFile, function() {
@@ -98,7 +98,7 @@ function assignEventListeners() {
 
     if (btnRegistro) {
         btnRegistro.addEventListener("click", function() {
-            let nuevoHeader = "componentes/header_ingresado.html";
+            let nuevoHeader = "../componentes/header_ingresado.html";
             localStorage.setItem("headerFile", nuevoHeader);
             loadComponent("header_placeholder", nuevoHeader, assignEventListeners);
         });
@@ -106,7 +106,7 @@ function assignEventListeners() {
 
     if (logoutButton) {
         logoutButton.addEventListener("click", function() {
-            let regresarHeader = "componentes/header.html";
+            let regresarHeader = "../componentes/header.html";
             localStorage.setItem("headerFile", regresarHeader);
             loadComponent("header_placeholder", regresarHeader, assignEventListeners);
         });
