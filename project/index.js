@@ -6,12 +6,12 @@ const path = require('path');
 app.engine('html',require('ejs').renderFile);//transforma archivos html a ejs
 app.set('view engine','ejs');// usar html como motor de vista
 
-//archivos estaticos
+//esto define la ruta por defecto para archivos estaticos(css,js y tono lo que no sea index)
 app.use(express.static(path.join(__dirname,'src')));
 
 
 
-//encender el servidor
+//esto enciende el servidor
 app.listen(3000, () => {
     console.log("Servidorse conectó");
 });
@@ -77,6 +77,26 @@ app.get('/noticias-locales', (req,res) => {
     res.render(path.join(__dirname,'src/pages/noticias/noticias.html'));
 });
 
+app.get('/noticias-bandera-azul', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/noticias/banderaazul_noticia.html'));
+});
+
+app.get('/noticias-conveniouned', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/noticias/conveniouned_noticia.html'));
+});
+
+app.get('/noticias-crear-noticias', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/noticias/crear_noticias.html'));
+});
+
+app.get('/noticias-exoneracionimpuesto', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/noticias/exoneracionimpuesto_noticia.html'));
+});
+
+app.get('/noticias-mejorasparque', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/noticias/mejorasparque_noticia.html'));
+});
+
 ///////////////////////////////
 
 //perfil de usuario
@@ -86,6 +106,17 @@ app.get('/perfil-usuario', (req,res) => {/////⚠️aun no esta linkeado en ning
 //////////////////////////////
 
 //recuperacion
+app.get('/recuperacion', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/recuperacion/recuperacion.html'));
+});
+
+app.get('/recuperacion-nuevacontrasena', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/recuperacion/nuevacontrasena.html'));
+});
+
+app.get('/recuperacion-autenticacion', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
+    res.render(path.join(__dirname,'src/pages/recuperacion/autenticacion.html'));
+});
 //////////////////////////////
 
 //registro
