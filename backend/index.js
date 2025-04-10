@@ -132,7 +132,9 @@ app.get('/servicios', (req,res) => {
 ///////////////////////////////
 
 
+//data base mongo atlas
 
+require("./db/db")
 
 
 
