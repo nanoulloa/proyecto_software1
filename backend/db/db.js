@@ -6,3 +6,4 @@ mongoose.connect(DB_URL,{})
 
     .then(db => console.log("se conecto la base de datos"))
     .catch(err => console.log("error"))
+
