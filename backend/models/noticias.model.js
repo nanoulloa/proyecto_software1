@@ -1,7 +1,7 @@
 //schema
 
 const noticias_schema = mongoose.Schema({
-    nombre:String,
+    titulo:String,
     fecha_publicacion:String,
     contenido:String,
 },{versionKey:false})
