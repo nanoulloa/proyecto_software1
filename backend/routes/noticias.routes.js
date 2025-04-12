@@ -15,7 +15,7 @@ router.get('/noticias/crear', (req, res) => {
 
 // Configuración de multer para subir imágenes
 const storage = multer.diskStorage({
-  destination: './frontend/public/uploads', // Ruta correcta dentro del proyecto
+  destination: '../../frontend/public/img/uploads', // Ruta correcta dentro del proyecto
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   }
