@@ -1,161 +1,59 @@
 const express = require('express');
-
 const app = express();
 const path = require('path');
 
-app.engine('html',require('ejs').renderFile);//transforma archivos html a ejs
-app.set('view engine','ejs');// usar html como motor de vista
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
-//esto define la ruta por defecto para archivos estaticos(css,js y tono lo que no sea index)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname,'../frontend/public')));
 
-console.log(__dirname,'../frontend/public')
+// Importar rutas
 
-//esto enciende el servidor
-app.listen(3000, () => {
-    console.log("Servidorse conectó");
-});
+//ruta del index
+const index_routes = require('./routes/index.routes');
+app.use('/', index_routes); 
 
+// avisos
 
-///////////////////////////
-//rutas///
-app.get('/', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/index.html'));
-});
-///////////////////////////////
-
-//avisos
-app.get('/avisos', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/avisos/avisos.html'));
-});
-
-app.get('/crear-avisos', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/avisos/crear_avisos.html'));
-});
-///////////////////////////////
-
-//contacto
-app.get('/contacto', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/contacto/contactoIndex.html'));
-});
-///////////////////////////////
-
-//control usuarios
-app.get('/control-usuarios', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/control_usuarios/ControlUsuarios.html'));
-});
-//////////////////////////////
-
-//denuncias
-app.get('/denuncias', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/denuncias/denuncias.html'));
-});
-//////////////////////////////
-
-//iniciativas
-app.get('/iniciativas', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/iniciativas/iniciativas-aprobadas.html'));
-});
-
-app.get('/crear-iniciativas', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/iniciativas/iniciativa.html'));
-});
-///////////////////////////////
-
-//log in
-app.get('/log-in', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/log_in/login.html'));
-});
-
-app.get('/autentificacion_log-in', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/log_in/autenticacionlogin.html'));
-});
-///////////////////////////////
+const avisos_routes = require('./routes/avisos.routes');
+app.use('/', avisos_routes); 
 
 //noticias
-app.get('/noticias-locales', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/noticias/noticias.html'));
-});
 
-app.get('/noticias-bandera-azul', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/noticias/banderaazul_noticia.html'));
-});
-
-app.get('/noticias-conveniouned', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/noticias/conveniouned_noticia.html'));
-});
-
-app.get('/noticias-crear-noticias', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/noticias/crear_noticias.html'));
-});
-
-app.get('/noticias-exoneracionimpuesto', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/noticias/exoneracionimpuesto_noticia.html'));
-});
-
-app.get('/noticias-mejorasparque', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/noticias/mejorasparque_noticia.html'));
-});
-
-///////////////////////////////
-
-//perfil de usuario
-app.get('/perfil-usuario', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/perfil_usuario/perfiUsuario.html'));
-});
-//////////////////////////////
-
-//recuperacion
-app.get('/recuperacion', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/recuperacion/recuperacion.html'));
-});
-
-app.get('/recuperacion-nuevacontrasena', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/recuperacion/nuevacontrasena.html'));
-});
-
-app.get('/recuperacion-autenticacion', (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../frontend/public/pages/recuperacion/autenticacion.html'));
-});
-//////////////////////////////
-
-//registro
-app.get('/registro', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/registro/registro.html'));
-});
-///////////////////////////////
+const noticias_routes = require('./routes/noticias.routes');
+app.use('/', noticias_routes); 
 
 //servicios
-app.get('/servicios', (req,res) => {
-    res.render(path.join(__dirname,'../frontend/public/pages/servicios/servicios.html'));
+
+const servicios_routes = require('./routes/servicios.routes');
+app.use('/', servicios_routes); 
+
+//contacto
+
+const contacto_routes = require('./routes/contacto.routes');
+app.use('/', contacto_routes); 
+
+//iniciativas
+
+const iniciativas_routes = require('./routes/iniciativas.routes');
+app.use('/', iniciativas_routes); 
+
+//login
+
+const login_routes = require('./routes/login.routes');
+app.use('/', login_routes); 
+
+//registro
+
+const registro_routes = require('./routes/registro.routes');
+app.use('/', registro_routes); 
+
+// Encender servidor
+app.listen(3000, () => {
+  console.log('Servidor conectado');
 });
-///////////////////////////////
 
-
-//data base mongo atlas
-
-require("./db/db")
-
-
-
-
-//              ,----------------,              ,---------,
-//         ,-----------------------,          ,"        ,"|
-//       ,"                      ,"|        ,"        ,"  |
-//      +-----------------------+  |      ,"        ,"    |
-//      |  .-----------------.  |  |     +---------+      |
-//      |  |                 |  |  |     | -==----'|      |
-//      |  |  dont make a    |  |  |     |         |      |
-//      |  |  callback hell  |  |  |/----|`---=    |      |
-//      |  |  C:\>_          |  |  |   ,/|==== ooo |      ;
-//      |  |                 |  |  |  // |(((( [33]|    ,"
-//      |  `-----------------'  |," .;'| |((((     |  ,"
-//      +-----------------------+  ;;  | |         |,"     -Kevin Lam-
-//         /_)______________(_/  //'   | +---------+
-//    ___________________________/___  `,
-//   /  oooooooooooooooo  .o.  oooo /,   \,"-----------
-//  / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,"
-// /_==__==========__==_ooo__ooo=_/'   /___________,"                `-._.'
-
-
-
+require('./db/db');
