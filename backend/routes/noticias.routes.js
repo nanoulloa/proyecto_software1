@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Guardar noticia
-router.post('/noticias', upload.single('imagen'), async (req, res) => {
+router.post('/crear_noticias', upload.single('imagen'), async (req, res) => {
   const nueva = new Noticia({
     titulo: req.body.titulo,
     fecha_publicacion: req.body.fecha_publicacion,
@@ -32,7 +32,7 @@ router.post('/noticias', upload.single('imagen'), async (req, res) => {
   });
 
   await nueva.save();
-  res.redirect('/noticias'); // Puedes cambiar a donde quieras redirigir
+  res.redirect('/noticia-locales'); // Puedes cambiar a donde quieras redirigir
 });
 
 module.exports = router;
