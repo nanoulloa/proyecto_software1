@@ -13,6 +13,6 @@ const noticias_schema = mongoose.Schema({
 
 //model
 
-const noticias_model = mongoose.model("noticias", noticias_schema)
+const noticias_model = mongoose.model("noticias", noticias_schema, "noticias")
 
 module.exports = noticias_model;

@@ -51,6 +51,8 @@ app.use('/', login_routes);
 const registro_routes = require('./routes/registro.routes');
 app.use('/', registro_routes); 
 
+
+
 // Encender servidor
 app.listen(3000, () => {
   console.log('Servidor conectado');
