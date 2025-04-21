@@ -9,7 +9,7 @@ router.get('/registro', (req,res) => {
 });
 
 // Guardar usuario
-router.post('/registro', async (req, res) => {
+router.post('/registro_crear', async (req, res) => {
   const nueva = new Registro({
     nombre: req.body.nombre,
     correo:  req.body.correo,
