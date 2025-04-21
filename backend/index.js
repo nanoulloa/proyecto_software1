@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
@@ -49,8 +50,7 @@ app.use('/', login_routes);
 //registro
 
 const registro_routes = require('./routes/registro.routes');
-app.use('/', registro_routes); 
-
+app.use('/', registro_routes);
 
 
 // Encender servidor
