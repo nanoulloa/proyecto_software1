@@ -13,7 +13,7 @@
           
         <main>
 
-            <form action="#" class="formulario__registro" id="formulario__registro" action="/registro_crear" method="POST">
+            <form class="formulario__registro" id="formulario__registro">
 
                  <div class="titulo_registro">
                     <h1>Registro</h1>
@@ -85,7 +85,7 @@
                  <div class="formulario__grupo" id="grupo__canton">
                     <label class="formulario__label">Seleccione su cantón: </label>
                     <div class="formulario__grupo-select">
-                        <select id="canton">
+                        <select id="canton" name="canton">
                             <option value="null"></option>
                             <option value="Montes de oca">Montes de Oca</option>
                          </select> 
@@ -99,7 +99,7 @@
                  <!-- Grupo Distrito-->
                  <div class="formulario__grupo" id="grupo__distrito">
                     <label class="formulario__label">Seleccione su distrito: </label>
-                        <select id="distrito">
+                        <select id="distrito" name="distrito">
                             <option value="null"></option>
                             <option value="Individual">San Pedro</option>
                             <option value="Individual">Sabanilla</option>
@@ -144,7 +144,7 @@
                     <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
                         El formulario se envio correctamente
                     </p>
-                    <button type="submit" id="btnRegistro" class="formulario_registro__btn">Enviar
+                    <button type="submit" id="btnRegistro" class="formulario_registro__btn">Enviar</button>
                    </div>
                  
 

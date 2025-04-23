@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const registro_schema = mongoose.Schema({
   nombre: { type: String, required: true },
   correo: { type: String, required: true, unique: true },
-  contraseña: { type: String, required: true },
+  password: { type: String, required: true },
   telefono: { type: String },
   canton: { type: String },
   distrito: { type: String },
