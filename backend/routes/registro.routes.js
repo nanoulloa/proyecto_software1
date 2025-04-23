@@ -1,4 +1,4 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
 const path = require('path');
 const Registro = require('../models/registro.model');
@@ -8,7 +8,7 @@ router.get('/registro', (req,res) => {
     res.render(path.join(__dirname,'../../frontend/public/pages/registro/registro.html'));
 });
 
-// Guardar usuario
+/* Guardar usuario
 router.post('/registro_crear', async (req, res) => {
   const nueva = new Registro({
     nombre: req.body.nombre,
@@ -22,15 +22,13 @@ router.post('/registro_crear', async (req, res) => {
 
   await nueva.save();
   res.redirect('/login'); // donde quiero redirigir despues
-});
+}); */
 
 module.exports = router;
-*/
 
 
-const express = require('express');
-const router = express.Router();
-const registro_model = require('../models/registro.model'); // Importa el modelo de datos
+
+
 
 
 
