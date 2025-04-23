@@ -26,7 +26,7 @@ router.post("/crear-aviso", async (req,res) => {
 
 router.get('/mostrar_avisos', async (req, res) => {
     try {
-      const avisos = await avisos_model.find();
+      const avisos = await aviso_model.find();
       res.json(avisos); 
     } catch (error) {
       res.status(500).json({ mensaje: 'Error al obtener los avisos', error });
