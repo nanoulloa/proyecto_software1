@@ -15,6 +15,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     text-align: center;
     color: #0AB4FD;
@@ -25,6 +26,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .formulario label, 
@@ -42,6 +44,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 .formulario button {
     margin-top: 15px;
     background: #0AB4FD;
@@ -52,13 +55,13 @@ h1 {
     cursor: pointer;
     font-size: 16px;
 }
+
 .formulario button:hover {
     background: #ffcc00;
 }
 
-
- /* Estilos del Footer */
- .footer {
+/* Estilos del Footer */
+.footer {
     background: #0AB4FD;
     color: white;
     padding: 20px;
@@ -67,6 +70,7 @@ h1 {
     flex-wrap: wrap;
     text-align: center;
 }
+
 .footer_contenedor {
     display: flex;
     justify-content: space-between;
@@ -75,28 +79,34 @@ h1 {
     margin: auto;
     flex-wrap: wrap;
 }
+
 .footer_izq, .footer_centro, .footer_der {
     flex: 1;
     min-width: 250px;
     margin: 10px 0;
 }
+
 .footer_titulo {
     font-size: 22px;
     font-weight: bold;
 }
+
 .footer_centro a {
     color: white;
     margin: 0 10px;
     font-size: 24px;
     transition: color 0.3s;
 }
+
 .footer_centro a:hover {
     color: #ffcc00;
 }
+
 .footer_der ul {
     list-style: none;
     padding: 0;
 }
+
 .footer_der ul li {
     margin: 5px 0;
     font-size: 14px;
@@ -111,4 +121,68 @@ h1 {
 
 .footer_der a:hover {
     color: #ffcc00;
+}
+
+/* Estilos para los mensajes de error */
+.formulario__mensaje {
+    display: none;
+    color: red;
+    font-size: 14px;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje-exito {
+    display: none;
+    color: green;
+    font-size: 14px;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/* Estilos para los grupos de los campos */
+.formulario__grupo-incorrecto input,
+.formulario__grupo-incorrecto textarea {
+    border: 1px solid #e74c3c;
+}
+
+.formulario__grupo-correcto input,
+.formulario__grupo-correcto textarea {
+    border: 1px solid #2ecc71;
+}
+
+/* Iconos */
+.formulario__grupo i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.formulario__grupo i.bxs-check-circle {
+    color: #2ecc71;
+}
+
+.formulario__grupo i.bxs-x-circle {
+    color: #e74c3c;
+}
+
+/* Mensajes de error */
+.formulario__input-error {
+    display: none;
+    color: #e74c3c;
+    font-size: 12px;
+}
+
+.formulario__input-error-activo {
+    display: block;
+    margin-top: 5px;
+}
+
+.formulario__grupo-incorrecto .formulario__input-error {
+    display: block;
 }
