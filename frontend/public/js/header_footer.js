@@ -92,23 +92,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function assignEventListeners() {
-    let btnRegistro = document.getElementById("btnRegistro");
-    let logoutButton = document.getElementById("logout_button");
+document.addEventListener("DOMContentLoaded", () => {
+    const placeholder = document.getElementById("header_placeholder");
+    const isLoggedIn = sessionStorage.getItem("usuario_logueado"); // o usa una cookie
 
-    if (btnRegistro) {
-        btnRegistro.addEventListener("click", function() {
-            let nuevoHeader = "../componentes/header_ingresado.html";
-            localStorage.setItem("headerFile", nuevoHeader);
-            loadComponent("header_placeholder", nuevoHeader, assignEventListeners);
-        });
-    }
+    fetch("/proyecto_software1/frontend/public/componentes/header_ingresado.html")
+        .then(res => res.text())
+        .then(data => {
+            placeholder.innerHTML = data;
 
-    if (logoutButton) {
-        logoutButton.addEventListener("click", function() {
-            let regresarHeader = "../componentes/header.html";
-            localStorage.setItem("headerFile", regresarHeader);
-            loadComponent("header_placeholder", regresarHeader, assignEventListeners);
+            if (isLoggedIn) {
+                document.querySelector('.perfil_item').style.display = 'inline-block';
+                document.querySelector('.logout_item').style.display = 'inline-block';
+                document.querySelector('.login_link').style.display = 'none';
+                document.querySelector('.register_link').style.display = 'none';
+            }
+
+            const logoutBtn = document.getElementById("logout_button");
+            if (logoutBtn) {
+                logoutBtn.addEventListener("click", e => {
+                    e.preventDefault();
+                    sessionStorage.removeItem("usuario_logueado");
+                    window.location.href = "/proyecto_software1/Index.html";
+                });
+            }
+        })
+        .catch(err => {
+            console.error("Error al cargar el header:", err);
         });
-    }
-}
+});
