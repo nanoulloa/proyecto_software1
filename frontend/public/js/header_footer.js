@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         assignEventListeners(); // Llamar después de cargar el header
     });
 });
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const placeholder = document.getElementById("header_placeholder");
     const isLoggedIn = sessionStorage.getItem("usuario_logueado"); // o usa una cookie
@@ -120,4 +120,4 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => {
             console.error("Error al cargar el header:", err);
         });
-});
+});*/

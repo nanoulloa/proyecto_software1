@@ -9,7 +9,8 @@ const registro_schema = mongoose.Schema({
   telefono: { type: String },
   canton: { type: String },
   distrito: { type: String },
-  direccion: { type: String }
+  direccion: { type: String },
+  rol: { type: String }
 }, { versionKey: false });
 
 //model

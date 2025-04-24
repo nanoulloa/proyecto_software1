@@ -37,6 +37,7 @@ module.exports = router;
 router.post('/registro_crear', async (req, res) => {
     const { nombre, correo, password, telefono, canton, distrito, direccion } = req.body;
 
+
     if (!nombre || !correo || !password) {
         return res.status(400).json({ message: 'Faltan datos requeridos' });
     }
@@ -50,7 +51,8 @@ router.post('/registro_crear', async (req, res) => {
             telefono,
             canton,
             distrito,
-            direccion
+            direccion,
+            rol: 'usuario'
         });
 
         await nuevoUsuario.save(); // Guarda el nuevo usuario en la base de datos
