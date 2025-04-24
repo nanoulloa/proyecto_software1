@@ -39,11 +39,41 @@ $formulario.addEventListener('submit', (e) => {
     validarCodigo();
     
     if(campoValido) {
-        // Si el código es válido
-        alert('Código de verificación correcto. Redirigiendo...');
-        
+        // Intentar forzar la redirección de diferentes maneras
+        try {
+            // Método 1: Usar setTimeout para dar tiempo a que se complete cualquier otra operación
+            setTimeout(() => {
+                window.location.href = '/recuperacion-nuevacontrasena';
+            }, 100);
+            
+            // Método alternativo si el anterior falla
+            // window.location.replace('/recuperacion-nuevacontrasena');
+            
+            console.log('Redirección iniciada a /recuperacion-nuevacontrasena');
+        } catch (error) {
+            console.error('Error al redirigir:', error);
+            // Como último recurso, intentar con una redirección tradicional
+            window.location = '/recuperacion-nuevacontrasena';
+        }
     } else {
-        // Si el código no es válido
-        alert('Por favor, introduzca un código de verificación válido de 6 dígitos.');
+        alert('Por favor, introduzca un código de recuperación válido de 6 dígitos.');
     }
 });
+
+// Agregar evento también al botón para asegurar que funcione
+document.querySelector('.btn-continuar_autenticacion').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    validarCodigo();
+    
+    if(campoValido) {
+        // Intentar forzar la redirección
+        setTimeout(() => {
+            window.location.href = '/recuperacion-nuevacontrasena';
+        }, 100);
+        console.log('Redirección iniciada desde botón a /recuperacion-nuevacontrasena');
+    } else {
+        alert('Por favor, introduzca un código de recuperación válido de 6 dígitos.');
+    }
+});
+

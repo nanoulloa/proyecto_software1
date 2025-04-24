@@ -38,10 +38,11 @@ $formulario.addEventListener('submit', (e) => {
     
     if(campoValido) {
  
-        window.location.href = "autenticacion.html";
+        window.location.href = "/recuperacion-autenticacion";
 
     } else {
         
         alert('Por favor, introduzca un correo electrónico válido.');
     }
 });
+

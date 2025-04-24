@@ -214,12 +214,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Usar la función centralizada de validación
         if (validarFormulario()) {
+            // Establecer la acción del formulario a /login
+            formulario.setAttribute('action', '/login');
             // Si la validación es exitosa, permitir el envío del formulario
-            if (enlaceRedireccion && enlaceRedireccion.getAttribute('href') !== '#') {
-                window.location.href = enlaceRedireccion.getAttribute('href');
-            } else {
-                formulario.submit();
-            }
+            formulario.submit();
         }
     });
     
