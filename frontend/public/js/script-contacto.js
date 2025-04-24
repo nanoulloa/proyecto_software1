@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
             horario: 'Lunes a Viernes 8:00am a 4:00pm'
         },
         'servicios_generales': {
-            titulo: 'Serv. Generales',
+            titulo: 'Servicios Generales',
             encargados: [
                 {
                     nombre: 'Francisco Cruz',
