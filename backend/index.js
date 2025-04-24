@@ -207,7 +207,7 @@ app.post('/add-login',(req,res)=>{
 
 const router = express.Router();
 const Registro = require('../models/registro.model'); // modelo de usuario
-const { verificarAdmin } = require('authenticate'); // asumimos este middleware 
+const { verificarAdmin } = require('authenticate'); 
 
 router.get('/usuarios', verificarAdmin, async (req, res) => {
   try {
