@@ -23,12 +23,13 @@ router.post('/login', async (req, res) => {
   
       if (!usuario) {
         // Usuario no encontrado
-        return res.send(`<script>alert("Usuario no registrado."); window.location.href="/login";</script>`);
+        return res.send(`<script>alert("Usuario no encontrado."); window.location.href="/log-in";</script>`);
       }
   
       // Comparar contraseña (sin encriptar por ahora)
       if (usuario.password !== password) {
-        return res.send(`<script>alert("Contraseña incorrecta."); window.location.href="/login";</script>`);
+        return res.send(`<script>alert("Contraseña incorrecta."); window.location.href="/log-in";</script>`);
+
       }
   
       // Si todo está bien, redirigir a la página de inicio

@@ -4,6 +4,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const { v4: uuidv4 } = require('uuid'); // para generar ID únicos para sesiones
 
+const session = require('express-session');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const registro_model = require('./models/registro.model');
+
+
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
@@ -12,6 +18,82 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname,'../frontend/public')));
+
+// Sesión
+app.use(session({
+  secret: 'SECRETO',
+  resave: false,
+  saveUninitialized: true
+}));
+
+// Inicializar Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Serialización y deserialización del usuario
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+
+// Configurar Google
+passport.use(new GoogleStrategy({
+    clientID: '909532331989-r9vpotimhio2ccpdtkphldidhhgbmc4s.apps.googleusercontent.com',
+    clientSecret: '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',
+    callbackURL: '/auth/google/callback'
+  },
+  async (accessToken, refreshToken, profile, done) => {
+    const email = profile.emails[0].value;
+
+    try {
+      const usuario = await registro_model.findOne({ correo: email });
+      if (usuario) {
+        return done(null, usuario); // Usuario registrado
+      } else {
+        return done(null, false, { message: 'Este correo no está registrado en nuestra plataforma' });
+      }
+    } catch (err) {
+      console.error('Error consultando en Mongoose:', err);
+      return done(err);
+    }
+  }
+));
+
+// Ruta para iniciar sesión con Google
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+// Ruta de callback después de autenticarse
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { 
+    failureRedirect: '/login?error=Este%20correo%20no%20est%C3%A1%20registrado',
+    failureMessage: true
+  }),
+  (req, res) => {
+    // Si el login fue exitoso, crear una sesión
+    const sessionId = uuidv4();
+    
+    // Guardar sesión con datos del usuario
+    sesiones[sessionId] = {
+      nombreUsuario: req.user.nombreUsuario,
+      correo: req.user.correo,
+      rol: req.user.rol
+    };
+    
+    // Establecer cookie de sesión
+    res.cookie('sessionId', sessionId, {
+      httpOnly: true,
+      maxAge: 3600000 // 1 hora
+    });
+    
+    // Redirigir a la ruta principal del sitio
+    res.redirect('/');
+  }
+);
+
 
 // Base de datos temporal de sesiones
 const sesiones = {};
