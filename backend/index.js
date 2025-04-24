@@ -203,3 +203,20 @@ app.post('/add-login',(req,res)=>{
       res.redirect('/');
   } 
 })
+//pagina de control de usuarios 
+
+const router = express.Router();
+const Registro = require('../models/registro.model'); // modelo de usuario
+const { verificarAdmin } = require('authenticate'); // asumimos este middleware 
+
+router.get('/usuarios', verificarAdmin, async (req, res) => {
+  try {
+    const usuarios = await Registro.find({}, 'nombre correo rol distrito');
+    res.json(usuarios);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: 'Error al obtener usuarios' });
+  }
+});
+
+module.exports = router;
