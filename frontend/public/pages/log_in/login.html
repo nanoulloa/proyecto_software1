@@ -13,19 +13,19 @@
 
     <div class="formulario_inicio_sesion">
         <h1>Inicio de sesion</h1>
-        <form method="post">
+        <form method="POST" action="/login">
             <div class="inicio_sesion">
-                <input type="email" placeholder="Correo" required>
+                <input type="email" name="correo" placeholder="Correo" required>
             </div>
             <div class="inicio_sesion">
-                <input type="password" placeholder="Contraseña" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
             </div>
             <br>
             <div class="recordar" id="olvidar_color"><a href="/proyecto_software1/pages/recuperacion/recuperacion.html">¿Olvido su contraseña?</a></div>
             <input type="submit" value="Iniciar">
             <p class="google">O iniciar sesion con Google</p>
             <div class="google_social-icon-btn">
-                <a href="#"><i class='bx bxl-google'></i></a>
+                <a href="/auth/google"><i class='bx bxl-google'></i></a>
             </div>
             <div class="registrarse">
                 Quiero hacer el <a href="../registro/registro.html">registro</a>
