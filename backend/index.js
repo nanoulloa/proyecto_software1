@@ -98,25 +98,20 @@ app.get('/auth/google/callback',
 // Base de datos temporal de sesiones
 const sesiones = {};
 
-//middleware
-function auth(req, res, next) {
-  const sessionId = req.cookies.sessionId;
-
-  if (sessionId && sesiones[sessionId]) {
-      req.user = sesiones[sessionId];
-      next();
-  } else {
-      res.redirect('/');
+// Middleware para verificar si el usuario está autenticado (usando Passport)
+function estaAutenticado(req, res, next) {
+  if (req.isAuthenticated()) {
+      return next();
   }
+  res.redirect('/login'); // Redirige a la página de login si no está autenticado
 }
 
-//valida si el usuario es admin
+// Middleware para verificar si el usuario es administrador
 function soloAdmin(req, res, next) {
-  if (req.user && req.user.rol === 'admin') {
-      next();
-  } else {
-      res.status(403).send("Acceso denegado");
+  if (req.isAuthenticated() && req.user && req.user.rol === 'admin') {
+      return next();
   }
+  res.status(403).send("Acceso denegado");
 }
 
 // Importar rutas
@@ -206,16 +201,16 @@ app.post('/add-login',(req,res)=>{
 //pagina de control de usuarios 
 
 const router = express.Router();
-const Registro = require('../models/registro.model'); // modelo de usuario
-const { verificarAdmin } = require('authenticate'); 
+const Registro = require('./models/registro.model'); // modelo de usuario
 
-router.get('/usuarios', verificarAdmin, async (req, res) => {
+
+router.get('/usuarios', estaAutenticado, soloAdmin, async (req, res) => {
   try {
-    const usuarios = await Registro.find({}, 'nombre correo rol distrito');
-    res.json(usuarios);
+      const usuarios = await Registro.find({}, 'nombre correo rol distrito');
+      res.json(usuarios);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensaje: 'Error al obtener usuarios' });
+      console.error(error);
+      res.status(500).json({ mensaje: 'Error al obtener usuarios' });
   }
 });
 
