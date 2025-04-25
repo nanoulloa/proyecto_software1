@@ -236,4 +236,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    app.post('/recuperacion-nuevacontrasena-verificacion', async (req, res) => {
+        const { numero_recuperacion_autenticacion, email } = req.body;
+    
+        const codigoGuardado = await db.codigos_recuperacion.findOne({
+            where: { email, codigo: numero_recuperacion_autenticacion }
+        });
+    
+        if (!codigoGuardado) {
+            return res.status(400).send('Código incorrecto o expirado');
+        }
+    
+        // Redirige al form para cambiar la contraseña con el email en la URL
+        res.redirect(`/proyecto_software1/pages/recuperacion/nuevacontrasena.html?email=${email}`);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const email = new URLSearchParams(window.location.search).get("email");
+        document.getElementById("email_oculto").value = email;
+    });
 });

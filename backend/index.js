@@ -19,6 +19,8 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname,'../frontend/public')));
 
+
+
 // Sesión
 app.use(session({
   secret: 'SECRETO',
@@ -213,5 +215,116 @@ router.get('/usuarios', estaAutenticado, soloAdmin, async (req, res) => {
       res.status(500).json({ mensaje: 'Error al obtener usuarios' });
   }
 });
+
+
+const CodigoRecuperacion = require('./models/codigos_recuperacion.model');
+// Ruta backend: recibe correo, genera y envía código
+app.post('/recuperacion-autenticacion', async (req, res) => {
+  try {
+    console.log("Cuerpo recibido:", req.body); // 👈 esto es clave
+
+    const { email } = req.body;
+    if (!email) {
+      throw new Error("No se recibió el correo");
+    }
+
+    req.session.recoveryEmail = email;
+    console.log("Email guardado en sesión:", email);
+
+    const codigo = Math.floor(100000 + Math.random() * 900000);
+
+    await CodigoRecuperacion.deleteMany({ email });
+    await CodigoRecuperacion.create({ email, codigo });
+
+    await enviarCorreo(email, codigo);
+
+    console.log(`Código enviado a ${email}: ${codigo}`);
+
+    res.redirect('/recuperacion-autenticacion');
+  } catch (error) {
+    console.error("Error en el proceso de recuperación:", error);
+    res.status(500).send("Error en el proceso de recuperación");
+  }
+});
+// Ruta backend: verifica el código
+app.post('/recuperacion-nuevacontrasena', async (req, res) => {
+  console.log("Datos de verificación recibidos:", req.body);
+  
+  const { numero_recuperacion_autenticacion } = req.body;
+  const codigoNum = parseInt(numero_recuperacion_autenticacion, 10);
+  
+  // Usar el email guardado en la sesión desde el paso anterior
+  const email = req.session.recoveryEmail;
+  
+  console.log("Código a verificar:", codigoNum);
+  console.log("Email asociado:", email);
+  
+  if (!email) {
+    console.log("Error: No se encontró email en la sesión");
+    return res.status(400).send('No se encontró el email asociado para la recuperación');
+  }
+
+  try {
+    const codigoGuardado = await CodigoRecuperacion.findOne({
+      email: email,
+      codigo: codigoNum
+    });
+    
+    console.log("Resultado de búsqueda:", codigoGuardado);
+    
+    if (!codigoGuardado) {
+      return res.status(400).send('Código incorrecto o expirado');
+    }
+    
+    // Si llega aquí, el código es correcto - redirigir a cambio de contraseña
+    res.redirect('/recuperacion-nuevacontrasena');
+  } catch (error) {
+    console.error("Error verificando código:", error);
+    return res.status(500).send('Error interno al verificar el código');
+  }
+});
+
+const bcrypt = require('bcrypt');
+
+app.post('/recuperacion-finalizar', async (req, res) => {
+    const { email, nueva_password } = req.body;
+
+    const hash = await bcrypt.hash(nueva_password, 10);
+    await registro_model.updateOne({ correo: email }, { password: hash });
+
+    // Elimina códigos usados
+    await codigos_recuperacion.deleteMany({ email });
+
+    res.send('Contraseña actualizada correctamente');
+});
+
+const nodemailer = require('nodemailer');
+
+async function enviarCorreo(email, codigo) {
+  try {
+    // Crear transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'marianoburpy@gmail.com', 
+        pass: 'phgm vtbo zuak lawf' 
+      }
+    });
+
+    // Configurar el mensaje
+    const mailOptions = {
+      from: '', 
+      to: email,
+      subject: 'Código de recuperación de contraseña',
+      text: `Tu código de recuperación es: ${codigo}`
+    };
+
+    // Enviar el correo
+    return await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error('Error al enviar el correo:', error);
+    throw new Error('Error al enviar el correo');
+  }
+}
 
 module.exports = router;
