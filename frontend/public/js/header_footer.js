@@ -68,7 +68,7 @@ document.getElementById("logout_button").addEventListener("click", function() {
 });*/
 
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     function loadComponent(id, file, callback) {
         fetch(file)
             .then(response => response.text())
@@ -90,34 +90,46 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("header_placeholder", headerFile, function() {
         assignEventListeners(); // Llamar después de cargar el header
     });
-});
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    const placeholder = document.getElementById("header_placeholder");
-    const isLoggedIn = sessionStorage.getItem("usuario_logueado"); // o usa una cookie
-
-    fetch("/proyecto_software1/frontend/public/componentes/header_ingresado.html")
-        .then(res => res.text())
-        .then(data => {
-            placeholder.innerHTML = data;
-
-            if (isLoggedIn) {
-                document.querySelector('.perfil_item').style.display = 'inline-block';
-                document.querySelector('.logout_item').style.display = 'inline-block';
-                document.querySelector('.login_link').style.display = 'none';
-                document.querySelector('.register_link').style.display = 'none';
-            }
-
-            const logoutBtn = document.getElementById("logout_button");
-            if (logoutBtn) {
-                logoutBtn.addEventListener("click", e => {
-                    e.preventDefault();
-                    sessionStorage.removeItem("usuario_logueado");
-                    window.location.href = "/proyecto_software1/Index.html";
-                });
-            }
-        })
-        .catch(err => {
-            console.error("Error al cargar el header:", err);
-        });
 });*/
+
+
+document.addEventListener("DOMContentLoaded", () => { 
+    const placeholder = document.getElementById("header_placeholder");
+
+    fetch("/api/sesion-activa")
+      .then(res => res.json())
+      .then(data => {
+        console.log("Sesión activa:", data);  // Aquí puedes verificar la información de la sesión
+
+        const rutaHeader = data.logueado 
+          ? "/componentes/header_ingresado.html"
+          : "componentes/header.html";
+
+        fetch(rutaHeader)
+          .then(res => res.text())
+          .then(html => {
+            placeholder.innerHTML = html;
+
+            if (data.logueado) {
+              // Mostrar el nombre del usuario u otros elementos si está logueado
+              const perfil = document.querySelector('.perfil_item');
+              const logout = document.querySelector('.logout_item');
+              if (perfil) perfil.style.display = 'inline-block';
+              if (logout) logout.style.display = 'inline-block';
+
+              const logoutBtn = document.getElementById("logout_button");
+              if (logoutBtn) {
+                logoutBtn.addEventListener("click", e => {
+                  e.preventDefault();
+                  fetch("/logout").then(() => window.location.href = "/");
+                });
+              }
+            }
+          });
+      })
+      .catch(err => {
+        console.error("Error al verificar sesión:", err);
+      });
+});
+
+

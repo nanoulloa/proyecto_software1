@@ -90,3 +90,12 @@ body{
         width: 100%;
     }
 }
+.error {
+    border: 2px solid #ff0000;
+}
+
+.error-mensaje {
+    color: #ff0000;
+    font-size: 0.8em;
+    margin-top: 5px;
+}

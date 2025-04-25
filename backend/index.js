@@ -20,12 +20,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'../frontend/public')));
 
 
-
-// Sesión
+/*
+// Sesión 
 app.use(session({
   secret: 'SECRETO',
   resave: false,
   saveUninitialized: true
+}));*/
+
+app.use(session({
+  secret: 'mi_clave_secreta',  // Cambia esta clave secreta por algo más seguro
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }  // Si usas HTTP, cambia 'secure' a false. Para HTTPS ponlo como true
 }));
 
 // Inicializar Passport
@@ -389,5 +396,17 @@ async function enviarCorreo(email, codigo) {
     throw new Error('Error al enviar el correo');
   }
 }
+
+app.get('/api/sesion-activa', (req, res) => {
+  if (req.session.usuario) {
+    res.json({
+      logueado: true,
+      nombreUsuario: req.session.usuario.nombre,
+      rol: req.session.usuario.rol
+    });
+  } else {
+    res.json({ logueado: false });
+  }
+});
 
 module.exports = router;
