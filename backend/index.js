@@ -142,6 +142,11 @@ app.use('/', servicios_routes);
 const contacto_routes = require('./routes/contacto.routes');
 app.use('/', contacto_routes); 
 
+//denuncias
+
+const denuncias_routes = require('./routes/denuncias.routes');
+app.use('/', denuncias_routes); 
+
 //iniciativas
 
 const iniciativas_routes = require('./routes/iniciativas.routes');
