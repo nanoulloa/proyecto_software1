@@ -206,7 +206,7 @@ const router = express.Router();
 const Registro = require('./models/registro.model'); // modelo de usuario
 
 
-router.get('/usuarios', estaAutenticado, soloAdmin, async (req, res) => {
+router.get('/Control_Usuarios', estaAutenticado, soloAdmin, async (req, res) => {
   try {
       const usuarios = await Registro.find({}, 'nombre correo rol distrito');
       res.json(usuarios);
