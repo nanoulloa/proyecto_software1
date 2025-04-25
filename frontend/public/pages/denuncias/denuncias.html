@@ -12,36 +12,36 @@
 
     <main>
         <section class="info">
-            <h2>¿Cómo realizar una denuncia?</h2>
-            <p>Para realizar una denuncia, complete el formulario con la información requerida. Nuestro equipo la revisará y tomará las medidas necesarias.</p>
+            <h2>¿Cómo realizar una denuncia?</h2>
+            <p>Para realizar una denuncia, complete el formulario con la información requerida. Nuestro equipo la revisará y tomará las medidas necesarias.</p>
         </section>
-        <label>
+
         <section class="formulario">
-            <h2>Información de Denuncia</h2>
-            <form id="denunciaForm">
+            <h2>Información de Denuncia</h2>
+            <form id="denunciaForm" action="/crear_denuncia" method="POST" enctype="multipart/form-data">
                 <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" required>
+                <input type="date" id="fecha" name="fecha" required>
 
                 <label for="comentario">Comentario:</label>
-                <textarea placeholder="Detalles de la denuncia." rows="4" required></textarea>
+                <textarea name="comentario" placeholder="Detalles de la denuncia." rows="4" required></textarea>
 
                 <label for="foto">Subir Foto:</label>
-                <input type="file" id="foto" accept="image/*">
+                <input type="file" id="foto" name="imagen" accept="image/*">
 
                 <button type="submit">Enviar Denuncia</button>
             </form>
         </section>
-        </label>
 
         <section class="pasos">
             <h2>Pasos a Seguir</h2>
             <ol>
-                <li>Complete el formulario con la información requerida.</li>
-                <li>Espere la revisión por parte del equipo de la municipalidad.</li>
-                <li>El estado de la denuncia cambiara una vez haya sido atendida.</li>
+                <li>Complete el formulario con la información requerida.</li>
+                <li>Espere la revisión por parte del equipo de la municipalidad.</li>
+                <li>El estado de la denuncia cambiará una vez haya sido atendida.</li>
             </ol>
         </section>
     </main>
+
     <div id="footer_placeholder"></div>
 
     <script src="/js/header_footer.js"></script>
@@ -49,4 +49,4 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 </body>
-</html> 
+</html>
