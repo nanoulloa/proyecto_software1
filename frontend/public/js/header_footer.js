@@ -94,42 +94,63 @@ document.getElementById("logout_button").addEventListener("click", function() {
 
 
 document.addEventListener("DOMContentLoaded", () => { 
-    const placeholder = document.getElementById("header_placeholder");
+    const headerPlaceholder = document.getElementById("header_placeholder");
+    const footerPlaceholder = document.getElementById("footer_placeholder");  // Placeholder para el footer
 
+    // Primero, verificar el estado de la sesión
     fetch("/api/sesion-activa")
       .then(res => res.json())
       .then(data => {
-        console.log("Sesión activa:", data);  // Aquí puedes verificar la información de la sesión
+        console.log("Sesión activa:", data);  // Verificar que datos de la sesión estén correctos
 
+        // Determinar la ruta del header dependiendo del estado de la sesión
         const rutaHeader = data.logueado 
           ? "/componentes/header_ingresado.html"
-          : "componentes/header.html";
+          : "/componentes/header.html";  // Asegúrate de que las rutas sean correctas
 
+        // Cargar el header
         fetch(rutaHeader)
           .then(res => res.text())
           .then(html => {
-            placeholder.innerHTML = html;
+            headerPlaceholder.innerHTML = html;
 
             if (data.logueado) {
               // Mostrar el nombre del usuario u otros elementos si está logueado
               const perfil = document.querySelector('.perfil_item');
               const logout = document.querySelector('.logout_item');
-              if (perfil) perfil.style.display = 'inline-block';
-              if (logout) logout.style.display = 'inline-block';
+              if (perfil) perfil.style.display = 'inline-block';  // Mostrar perfil
+              if (logout) logout.style.display = 'inline-block';  // Mostrar logout
 
+              // Configuración de evento para el logout
               const logoutBtn = document.getElementById("logout_button");
               if (logoutBtn) {
                 logoutBtn.addEventListener("click", e => {
-                  e.preventDefault();
-                  fetch("/logout").then(() => window.location.href = "/");
+                  e.preventDefault(); // Prevenir la acción por defecto del enlace
+                  fetch("/logout")  // Asegúrate de que la ruta /logout esté implementada en el backend
+                    .then(() => window.location.href = "/")  // Redirigir al inicio
+                    .catch(err => {
+                      console.error("Error al cerrar sesión:", err);
+                    });
                 });
               }
             }
+          })
+          .catch(err => {
+            console.error("Error al cargar el header:", err);
+          });
+
+        // Ahora cargar el footer
+        fetch("/componentes/footer.html")  // Ruta para el footer
+          .then(res => res.text())
+          .then(html => {
+            footerPlaceholder.innerHTML = html;  // Insertar el footer en su lugar
+          })
+          .catch(err => {
+            console.error("Error al cargar el footer:", err);
           });
       })
       .catch(err => {
         console.error("Error al verificar sesión:", err);
       });
 });
-
 
