@@ -10,6 +10,10 @@ router.get('/denuncias', (req, res) => {
   res.render(path.join(__dirname, '../../frontend/public/pages/denuncias/denuncias.html'));
 });
 
+router.get('/mostrar-denuncias', (req, res) => {
+  res.render(path.join(__dirname, '../../frontend/public/pages/denuncias/mostrardenuncia.html'));
+});
+
 
 const storage = multer.diskStorage({
   destination: (path.join(__dirname, '../../frontend/public/img/uploads')), // Ruta correcta dentro del proyecto

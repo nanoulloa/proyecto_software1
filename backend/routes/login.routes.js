@@ -78,7 +78,7 @@ router.get('/login', (req, res) => {
     }
   });
 
-  
+
 router.get('/log-in', (req,res) => {
     res.render(path.join(__dirname,'../../frontend/public/pages/log_in/login.html'));
 });
@@ -100,5 +100,6 @@ router.get('/recuperacion-nuevacontrasena', (req, res) => {
 router.get('/recuperacion-autenticacion', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/public/pages/recuperacion/autenticacion.html'));
 });
+
 
 module.exports = router;
