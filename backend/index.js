@@ -171,10 +171,14 @@ app.use('/', registro_routes);
 
 //ruta de logout
 app.get('/logout', (req, res) => {
-  const sessionId = req.cookies.sessionId;
-  delete sesiones[sessionId];
-  res.clearCookie('sessionId');
-  res.redirect('/');
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Error al cerrar sesión:", err);
+      return res.status(500).send("No se pudo cerrar sesión");
+    }
+    // Redirigir a la página de inicio o login después de destruir la sesión
+    res.redirect('/login');
+  });
 });
 
 
