@@ -142,6 +142,11 @@ app.use('/', servicios_routes);
 const contacto_routes = require('./routes/contacto.routes');
 app.use('/', contacto_routes); 
 
+//denuncias
+
+const denuncias_routes = require('./routes/denuncias.routes');
+app.use('/', denuncias_routes); 
+
 //iniciativas
 
 const iniciativas_routes = require('./routes/iniciativas.routes');
@@ -284,7 +289,63 @@ app.post('/recuperacion-nuevacontrasena', async (req, res) => {
   }
 });
 
-const bcryptjs = require('bcryptjs');
+// Ruta para procesar el cambio de contraseña
+app.post('/recuperacion-finalizar', async (req, res) => {
+  console.log("Datos de nueva contraseña recibidos:", req.body);
+  
+  const { password, confirmPassword } = req.body;
+  // Usar el email de la sesión guardado anteriormente
+  const email = req.session.recoveryEmail;
+  
+  console.log("Email para cambio de contraseña:", email);
+  
+  if (!email) {
+    console.log("Error: No se encontró email en la sesión");
+    return res.status(400).send('No se encontró el email asociado para la recuperación');
+  }
+  
+  if (!password || !confirmPassword) {
+    return res.status(400).send('Debe completar todos los campos');
+  }
+  
+  if (password !== confirmPassword) {
+    return res.status(400).send('Las contraseñas no coinciden');
+  }
+  
+  try {
+    // Verificar que el usuario existe
+    const usuario = await registro_model.findOne({ correo: email });
+    if (!usuario) {
+      return res.status(404).send('Usuario no encontrado');
+    }
+    
+    // Actualizar la contraseña
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await registro_model.updateOne(
+      { correo: email },
+      { $set: { password: hashedPassword } }
+    );
+    
+    // Eliminar los códigos de recuperación usados
+    await CodigoRecuperacion.deleteMany({ email });
+    
+    // Limpiar la sesión
+    delete req.session.recoveryEmail;
+    
+    console.log("Contraseña actualizada con éxito para:", email);
+    
+    // Mostrar mensaje de éxito y redirigir
+    res.send(`<script>
+      alert("Contraseña actualizada con éxito");
+      window.location.href = "/login";
+    </script>`);
+  } catch (error) {
+    console.error("Error al actualizar contraseña:", error);
+    res.status(500).send('Error interno al actualizar la contraseña');
+  }
+});
+
+const bcrypt = require('bcryptjs');
 
 app.post('/recuperacion-finalizar', async (req, res) => {
     const { email, nueva_password } = req.body;
