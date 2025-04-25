@@ -1,4 +1,4 @@
-fetch('/admin/usuarios')
+fetch('/Control_Usuarios')
   .then(res => {
     if (!res.ok) throw new Error('Acceso no autorizado');
     return res.json();
