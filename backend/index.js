@@ -154,6 +154,12 @@ app.use('/', contacto_routes);
 const denuncias_routes = require('./routes/denuncias.routes');
 app.use('/', denuncias_routes); 
 
+//Perfil usuario
+
+const perfiUsuario_routes = require('./routes/perfiUsuario.routes');
+app.use('/', perfiUsuario_routes); 
+
+
 //iniciativas
 
 const iniciativas_routes = require('./routes/iniciativas.routes');
