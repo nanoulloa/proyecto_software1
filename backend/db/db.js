@@ -9,6 +9,12 @@ mongoose.connect(DB_URL,{})
 
 //update de usuario
 
-const actualizar = async(id)=>{
-    await usuarioModel.deleteOne({_id:})
-}
+// const actualizar = async(id)=>{
+//     await usuarioModel.updateOne({_id:id},
+//         {
+//             $set:{
+
+//             }
+//         }
+//     );
+// }
