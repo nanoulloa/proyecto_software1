@@ -108,12 +108,15 @@ app.get('/auth/google/callback',
 const sesiones = {};
 
 // Middleware para verificar si el usuario está autenticado (usando Passport)
-function estaAutenticado(req, res, next) {
+
+
+const estaAutenticado = (req, res, next) => {
   if (req.isAuthenticated()) {
-      return next();
+    return next();
   }
-  res.redirect('/login'); // Redirige a la página de login si no está autenticado
-}
+  res.status(401).send('No autenticado');
+};
+
 
 // Middleware para verificar si el usuario es administrador
 /*function soloAdmin(req, res, next) {
@@ -457,6 +460,7 @@ async function enviarCorreo(email, codigo) {
     throw new Error('Error al enviar el correo');
   }
 }
+
 
 app.get('/api/sesion-activa', (req, res) => {
   if (req.session.usuario) {
