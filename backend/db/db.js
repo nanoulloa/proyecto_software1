@@ -7,3 +7,8 @@ mongoose.connect(DB_URL,{})
     .then(db => console.log("se conecto la base de datos"))
     .catch(err => console.log("error"))
 
+//update de usuario
+
+const actualizar = async(id)=>{
+    await usuarioModel.deleteOne({_id:})
+}
