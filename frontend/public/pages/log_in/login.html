@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Inicio de sesión</title>
+</head>
+<body>
+
+    <div id="header_placeholder"></div>
+
+    <div class="formulario_inicio_sesion">
+        <h1>Inicio de sesión</h1>
+        <form method="POST" action="/login">
+            <div class="inicio_sesion">
+                <input type="email" name="correo" placeholder="Correo" required>
+            </div>
+            <div class="inicio_sesion">
+                <input type="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <br>
+            <div class="recordar" id="olvidar_color"><a href="/recuperacion">¿Olvido su contraseña?</a></div>
+            <input type="submit" value="Iniciar">
+            <p class="google">O iniciar sesion con Google</p>
+            <div class="google_social-icon-btn">
+                <a href="/auth/google"><i class='bx bxl-google'></i></a>
+            </div>
+            <div class="registrarse">
+                Quiero hacer el <a href="/registro">registro</a>
+            </div>
+    </form>
+    </div>
+    
+    <div id="footer_placeholder"></div>
+
+    <script src="js/header_footer.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="../../js/autenticacionlogin.js"></script>
+</body>
+</html>

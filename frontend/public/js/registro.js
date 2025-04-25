@@ -196,3 +196,45 @@ window.addEventListener('DOMContentLoaded', () => {
     distritoSelect.value = "null";
 });
 
+
+
+// Obtener el formulario
+const formulario = document.getElementById('formulario__registro');
+
+formulario.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Evita el envío por defecto del formulario
+
+    const formData = new FormData(formulario); // Recoge los datos del formulario
+
+    const data = {
+        nombre: formData.get('nombre'),
+        correo: formData.get('correo'),
+        password: formData.get('password'),
+        telefono: formData.get('telefono'),
+        canton: formData.get('canton'),
+        distrito: formData.get('distrito'),
+        direccion: formData.get('direccion')
+    };
+
+    try {
+        const response = await fetch('/registro_crear', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Convierte los datos a JSON
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message);
+            // Redirige o realiza alguna otra acción
+        } else {
+            alert(result.message); // Si hay un error, muestra el mensaje
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema al enviar el formulario.');
+    }
+});

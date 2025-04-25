@@ -1,0 +1,114 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #0AB4FD;
+}
+
+.formulario {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario label, 
+.formulario input, 
+.formulario textarea {
+    width: 80%; 
+    max-width: 500px; 
+    text-align: center;
+}
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.formulario button {
+    margin-top: 15px;
+    background: #0AB4FD;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.formulario button:hover {
+    background: #ffcc00;
+}
+
+
+ /* Estilos del Footer */
+ .footer {
+    background: #0AB4FD;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.footer_contenedor {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.footer_izq, .footer_centro, .footer_der {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 0;
+}
+.footer_titulo {
+    font-size: 22px;
+    font-weight: bold;
+}
+.footer_centro a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+.footer_centro a:hover {
+    color: #ffcc00;
+}
+.footer_der ul {
+    list-style: none;
+    padding: 0;
+}
+.footer_der ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer_der a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer_der a:hover {
+    color: #ffcc00;
+}

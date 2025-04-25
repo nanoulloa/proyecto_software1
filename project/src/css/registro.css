@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*REGISTRO*/
+
+main{
+    width: 90%;
+    max-width: 800px;
+    margin: 25px auto;
+    border: 2px solid skyblue;
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px white;
+    background-color: #D9D9D9;
+}
+
+.titulo_registro {
+    width: 100%;
+    text-align: center;
+}
+
+.titulo_registro h1 {
+    padding: 10px 0;
+}
+
+.formulario__registro{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
+}
+
+.formulario__label{
+    display: block;
+    padding: 10px 0;
+}
+
+.formulario__grupo-input{
+   position: relative;
+}
+
+.formulario__grupo-select{
+    position: relative;
+}
+
+.formulario__input{
+    width: 50%;
+    background: white;
+    border-bottom: 2px solid rgb(87, 206, 227);
+    border-right: none;
+    color:black;
+    font-size: 17px;
+    padding: 0 10px;
+    transition: all 1s;
+    line-height: 45px;
+    outline: none;
+}
+
+.formulario__grupo-input{
+    position: relative;
+ }
+
+#canton{
+    width: 50%;
+    background: white;
+    border-bottom: 2px solid rgb(87, 206, 227);
+    border-right: none;
+    color:black;
+    font-size: 17px;
+    padding: 0 10px;
+    transition: all 1s;
+    line-height: 45px;
+    outline: none;
+    position: relative;
+}
+
+#distrito{
+    width: 50%;
+    background: white;
+    border-bottom: 2px solid rgb(87, 206, 227);
+    border-right: none;
+    color:black;
+    font-size: 17px;
+    padding: 0 10px;
+    transition: all 1s;
+    line-height: 45px;
+    outline: none;
+    position: relative;
+}
+
+#canton, #distrito {
+    width: auto; 
+    min-width: 200px; 
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+#direccion{
+    resize: none;
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    border-bottom: 2px solid rgb(87, 206, 227);
+    border-right: none;
+    color:black;
+    font-size: 16px;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    bottom: 15px;
+    right: 45px;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.formulario__input:focus{
+    box-shadow: 0 0 5px rgb(87, 206, 227);
+    border-radius: 10px;
+}
+
+.formulario__input-error{
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.formulario__select-error{
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/*CSS llamado por el JS*/
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__select-error-activo{
+    display: block;
+}
+
+.formulario__span{
+    font-size: 1.2em;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+    grid-column: span 1;
+}
+
+.formulario__grupo-terminos{
+    text-align: center;
+}
+
+.formulario__mensaje{
+    background-color: red;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+/*CSS llamado por el JS*/
+.formulario__mensaje-activo{
+    display: block;
+}
+
+.formulario__grupo-btn-enviar{
+    text-align: center;
+}
+
+.formulario_registro__btn{
+    color: white; 
+    text-decoration: none;
+}
+
+.formulario__mensaje-exito{
+    font-size: 2em;
+    color: rgb(0, 143, 17);
+    padding: 10px;
+    display: none;
+}
+
+/*CSS llamado por el JS*/
+.formulario__mensaje-exito-activo{
+    display: block;
+}
+
+.formulario_registro__btn{
+    padding: 15px 35px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.formulario_registro__btn:hover{
+    background-color: #7DCEF3;
+}
+
+/*VALIDACION*/
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #0aa330;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label{
+    color: #9d0404;
+}
+
+.formulario__grupo-incorrecto .formulario__input{
+    border: 1px solid #9d0404;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color: #9d0404;
+    opacity: 1;
+}
+

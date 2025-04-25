@@ -1,0 +1,139 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.iniciativas-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.iniciativas-container h2 {
+    color: #01579B;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.filtros {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.filtros select,
+.filtros input {
+    padding: 10px;
+    border: 1px solid #29B6F6;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 200px;
+}
+
+.iniciativas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.iniciativa-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    position: relative;
+}
+
+.categoria-tag {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: #29B6F6;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.iniciativa-card h3 {
+    color: #01579B;
+    margin: 20px 0 15px;
+}
+
+.descripcion {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.detalles {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.ver-mas {
+    background-color: #0277BD;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mas:hover {
+    background-color: #01579B;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagina-btn {
+    padding: 8px 16px;
+    border: 1px solid #29B6F6;
+    background-color: white;
+    color: #29B6F6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagina-btn.active {
+    background-color: #29B6F6;
+    color: white;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .iniciativas-container {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    .filtros {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filtros select,
+    .filtros input {
+        width: 100%;
+    }
+
+    .iniciativas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

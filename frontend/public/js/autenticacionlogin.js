@@ -47,3 +47,8 @@ $formulario.addEventListener('submit', (e) => {
         alert('Por favor, introduzca un código de verificación válido de 6 dígitos.');
     }
 });
+
+
+
+//
+

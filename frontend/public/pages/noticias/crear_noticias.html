@@ -6,30 +6,63 @@
     <title>Crear Noticia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/proyecto_software1/css/crear_noticias.css">
+    <link rel="stylesheet" href="../../css/crear_noticias.css">
 </head>
 <body>
     <div id="header_placeholder"></div>
 
     <div class="container">
         <h1>Noticias para la Comunidad</h1>
-        <form class="formulario">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required>
-            <label for="contenido">Contenido:</label>
-            <textarea id="contenido" name="contenido" rows="5" required></textarea>
-            <label for="fecha-inicio">Fecha de publicación:</label>
-            <input type="date" id="fecha-inicio" name="fecha-inicio" required>
-    
-            <label for="imagen">Subir imagen:</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*">
+        <form class="formulario" id="formulario__registro" action="/crear_noticias" method="POST" enctype="multipart/form-data">
+            
+            <!-- Título -->
+            <div id="grupo__titulo" class="formulario__grupo">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                <i></i>
+                <div class="formulario__input-error">El título debe tener entre 3 y 50 caracteres.</div>
+            </div>
+            
+            <!-- Contenido -->
+            <div id="grupo__contenido" class="formulario__grupo">
+                <label for="contenido">Contenido:</label>
+                <textarea id="contenido" name="contenido" rows="5" required></textarea>
+                <i></i>
+                <div class="formulario__input-error">El contenido debe tener entre 10 y 500 caracteres.</div>
+            </div>
+
+            <!-- Fecha de publicación -->
+            <div id="grupo__fecha_publicacion" class="formulario__grupo">
+                <label for="fecha-inicio">Fecha de publicación:</label>
+                <input type="date" id="fecha-inicio" name="fecha_publicacion" required>
+                <i></i>
+                <div class="formulario__input-error">La fecha es obligatoria.</div>
+            </div>
+
+            <!-- Imagen -->
+            <div id="grupo__imagen" class="formulario__grupo">
+                <label for="imagen">Subir imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+                <i></i>
+                <div class="formulario__input-error">Debe subir una imagen.</div>
+            </div>
+
             <button type="submit">Crear noticia</button>
         </form>
+
+        <!-- Mensajes de error y éxito -->
+        <div id="formulario__mensaje" class="formulario__mensaje">
+            <p>Por favor, complete todos los campos.</p>
+        </div>
+        <div id="formulario__mensaje-exito" class="formulario__mensaje-exito">
+            <p>Noticia creada con éxito.</p>
+        </div>
     </div>
 
     <div id="footer_placeholder"></div>
 
-    <script src="/proyecto_software1/js/header_footer.js"></script>  
-    
+    <script src="../../js/header_footer.js"></script>
+    <script src="../../js/noticias.js"></script>  
+
 </body>
 </html>

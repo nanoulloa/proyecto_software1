@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olvido de contraseña recuperación</title>
-    <link rel="stylesheet" href="/proyecto_software1/css/autenticacion.css">
+    <link rel="stylesheet" href="/css/autenticacion.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -16,7 +16,8 @@
     <div class="formulario_recuperacion_autenticacion">
         <h1>Ingresar el código de recuperación</h1>
         <p class="text_autenticacion">Para tu seguridad, enviamos el código a tu correo electrónico.</p>
-        <form method="post">
+        <form method="post" action="/recuperacion-nuevacontrasena">
+            
             <div class="recuperacion_autenticacion" id="grupo_recuperacion_autenticacion">
                 <label>Ingresar código de recuperación</label>
                 <div class="recuperacion_autenticacion__grupo-input">
@@ -35,8 +36,8 @@
 
     <div id="footer_placeholder"></div>
 
-    <script src="/proyecto_software1/js/header_footer.js"></script>
-    <script src="/proyecto_software1/js/autenticacion.js"></script>
+    <script src="js/header_footer.js"></script>
+    <script src="js/autenticacion.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 

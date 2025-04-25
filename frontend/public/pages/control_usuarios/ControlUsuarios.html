@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ControlUsuarios</title>
-    <link rel="stylesheet" text="text/css" href="/proyecto_software1/css/ControlUsuarios.css">
+    <link rel="stylesheet" text="text/css" href="css/ControlUsuarios.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <form method="POST" action="/Control_Usuarios">
 
     <div id="header_placeholder"></div>
 
@@ -25,134 +26,24 @@
         <table class="Control_Usuarios_Tabla_Principal">
             <thead>
                 <tr>
-                    <th>Nombre de usuario</th>
+                    <th>Nombre</th>
                     <th>Rol</th>
-                    <th>Ultima vez en línea</th>
-                    <th>Fecha creación</th>
+                    <th>Correo</th>
+                    <th>Distrito</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                    <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>Hace 2 horas</td>
-                    <td>Julio 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Paola Lopez Segura</td>
-                    <td>Consejal</td>
-                    <td>Hace 4 días</td>
-                    <td>Abril 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Febrero 2023</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Administrador</td>
-                    <td>Hace 1 año</td>
-                    <td>Julio 2023</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Septiembre 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Enero 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Andrea Soto Murillo</td>
-                    <td>Administrador</td>
-                    <td>hace 2 horas</td>
-                    <td>Junio 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Noviembre 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Agosto 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Consejal</td>
-                    <td>En línea</td>
-                    <td>Octubre 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Juan Perez Lopez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Marzo 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i> Ana fernandez</td>
-                    <td>Usuario</td>
-                    <td>En línea</td>
-                    <td>Diciembre 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i>María Hernandez</td>
-                    <td>Usuario</td>
-                    <td>Hace 3 dias</td>
-                    <td>Mayo 2024</td>
-                </tr>
-                <tr>
-                    <td><i class="Control_Usuarios_Lista">
-                        <i class='bx bx-user'></i>
-                    </i>Rebeca Solano</td>
-                    <td>Administrador</td>
-                    <td>En línea</td>
-                    <td>Abril 2022</td>
-                </tr>
-            </tbody>
-        </table>
+                <!-- Aquí se insertarán los usuarios -->
+              </tbody>
+         </table>
     </div>
 </div>
 <div id="footer_placeholder"></div>
 
-<script src="/proyecto_software1/js/header_footer.js"></script>
+<script src="js/header_footer.js"></script>
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="../../js/ControlUsuarios.js"></script>
 </body>
 </html>

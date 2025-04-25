@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contraseña olvidada</title>
-    <link rel="stylesheet" href="/proyecto_software1/css/recuperacion.css">
+    <link rel="stylesheet" href="css/recuperacion.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -17,11 +17,11 @@
         <h1>Ayuda de contraseña</h1>
         <p class="text_recuperacion">Introduzca la dirección de correo electrónico asociado con su
             cuenta.</p>
-        <form method="post">
+        <form method="POST" action="/recuperacion-autenticacion">
             <div class="recuperacion" id="grupo_recuperacion">
                 <label>E-mail</label>
                 <div class="recuperacion__grupo-input">
-                    <input type="email" class="recuperacion" name="correo_recuperacion" id="correo_recuperacion">
+                    <input type="email" class="recuperacion" name="email" id="correo_recuperacion">
                     <i class='recuperacion bx bxs-x-circle'></i>
                 </div>
                 <p class="recuperacion__input-error">
@@ -38,8 +38,8 @@
 
     <div id="footer_placeholder"></div>
 
-    <script src="/proyecto_software1/js/header_footer.js"></script> 
-    <script src="/proyecto_software1/js/recuperacion.js"></script>
+    <script src="js/header_footer.js"></script> 
+    <script src="js/recuperacion.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 

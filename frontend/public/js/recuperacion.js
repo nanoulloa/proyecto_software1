@@ -37,11 +37,10 @@ $formulario.addEventListener('submit', (e) => {
     validarCorreo();
     
     if(campoValido) {
- 
-        window.location.href = "autenticacion.html";
-
+        // En lugar de redirigir con window.location.href, envía el formulario
+        $formulario.submit();
     } else {
-        
         alert('Por favor, introduzca un correo electrónico válido.');
     }
 });
+

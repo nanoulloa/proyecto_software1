@@ -1,5 +1,7 @@
 
-<link rel="stylesheet" href="/proyecto_software1/frontend/public/css/newheaderfooter.css">
+
+<!--
+<link rel="stylesheet" href="../css/newheaderfooter.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
@@ -7,7 +9,7 @@
 
     <header>
         <div class="logo_header">
-            <img class="imagen" src="/proyecto_software1/frontend/public/img/logo header.png" alt="logo de la municipalidad">
+            <img class="imagen" src="../img/logo header.png" alt="logo de la municipalidad">
         </div>
         <ul class="opciones">
             <li class="elemento_menu"><a href="/proyecto_software1/Index.html">Inicio</a></li>
@@ -30,4 +32,41 @@
             </li>
             <li class="elemento_menu login_item"><a href="#" id="logout_button">Cerrar Sesión</a></li>
         </ul>
-    </header>
+    </header> -->
+
+
+<link rel="stylesheet" href="../css/newheaderfooter.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+<script src="/frontend/public/js/header_footer.js"></script>
+
+<header>
+    <div class="logo_header">
+        <img class="imagen" src="../img/logo header.png" alt="logo de la municipalidad">
+    </div>
+    <ul class="opciones">
+        <li class="elemento_menu"><a href="/">Inicio</a></li>
+        <li class="elemento_menu"><a href="/servicios">Servicios</a></li>
+        <li class="elemento_menu dropdown">
+            <a>Noticias</a>
+            <ul class="dropdown_menu">
+                <li><a href="/noticias-locales">Locales</a></li>
+                <li class="elemento_menu"><a href="/avisos">Avisos</a></li>
+                <li><a href="/iniciativas">Iniciativas</a></li>
+            </ul>
+        </li>
+        <li class="elemento_menu"><a href="/denuncias">Denuncias</a></li>
+        <li class="elemento_menu"><a href="/contacto">Contacto</a></li>
+        <li class="elemento_menu login_item">
+            <a href="/perfil-usuario">
+                <i class="fas fa-user"></i> Perfil
+            </a>
+        </li>
+        <li class="elemento_menu login_item">
+            <a href="/backend/index.js/logout" id="logout_button">Cerrar Sesión</a>
+        </li>
+    </ul>
+</header>
+
+    
