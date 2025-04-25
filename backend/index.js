@@ -327,4 +327,19 @@ async function enviarCorreo(email, codigo) {
   }
 }
 
+app.get('/api/sesion-activa', (req, res) => {
+  const sessionId = req.cookies.sessionId;
+  const sesion = sesiones[sessionId];
+
+  if (sesion) {
+    res.json({
+      logueado: true,
+      nombreUsuario: sesion.nombreUsuario,
+      rol: sesion.rol
+    });
+  } else {
+    res.json({ logueado: false });
+  }
+});
+
 module.exports = router;
