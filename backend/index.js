@@ -284,6 +284,62 @@ app.post('/recuperacion-nuevacontrasena', async (req, res) => {
   }
 });
 
+// Ruta para procesar el cambio de contraseña
+app.post('/recuperacion-finalizar', async (req, res) => {
+  console.log("Datos de nueva contraseña recibidos:", req.body);
+  
+  const { password, confirmPassword } = req.body;
+  // Usar el email de la sesión guardado anteriormente
+  const email = req.session.recoveryEmail;
+  
+  console.log("Email para cambio de contraseña:", email);
+  
+  if (!email) {
+    console.log("Error: No se encontró email en la sesión");
+    return res.status(400).send('No se encontró el email asociado para la recuperación');
+  }
+  
+  if (!password || !confirmPassword) {
+    return res.status(400).send('Debe completar todos los campos');
+  }
+  
+  if (password !== confirmPassword) {
+    return res.status(400).send('Las contraseñas no coinciden');
+  }
+  
+  try {
+    // Verificar que el usuario existe
+    const usuario = await registro_model.findOne({ correo: email });
+    if (!usuario) {
+      return res.status(404).send('Usuario no encontrado');
+    }
+    
+    // Actualizar la contraseña
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await registro_model.updateOne(
+      { correo: email },
+      { $set: { password: hashedPassword } }
+    );
+    
+    // Eliminar los códigos de recuperación usados
+    await CodigoRecuperacion.deleteMany({ email });
+    
+    // Limpiar la sesión
+    delete req.session.recoveryEmail;
+    
+    console.log("Contraseña actualizada con éxito para:", email);
+    
+    // Mostrar mensaje de éxito y redirigir
+    res.send(`<script>
+      alert("Contraseña actualizada con éxito");
+      window.location.href = "/login";
+    </script>`);
+  } catch (error) {
+    console.error("Error al actualizar contraseña:", error);
+    res.status(500).send('Error interno al actualizar la contraseña');
+  }
+});
+
 const bcrypt = require('bcrypt');
 
 app.post('/recuperacion-finalizar', async (req, res) => {
