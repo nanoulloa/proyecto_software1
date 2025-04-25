@@ -7,7 +7,7 @@ router.get('/iniciativas', (req,res) => {
 });
 
 router.get('/crear-iniciativas',soloAdmin, (req,res) => {/////⚠️aun no esta linkeado en ningun lugar⚠️/////
-    res.render(path.join(__dirname,'../../frontend/public/pages/iniciativas/iniciativa.html'){
+    res.render(path.join(__dirname,'../../frontend/public/pages/iniciativas/iniciativa.html'),{
         usuario: req.user.nombreUsuario,
         rol: req.user.rol
     });

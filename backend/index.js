@@ -340,7 +340,7 @@ app.post('/recuperacion-finalizar', async (req, res) => {
   }
 });
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 app.post('/recuperacion-finalizar', async (req, res) => {
     const { email, nueva_password } = req.body;
