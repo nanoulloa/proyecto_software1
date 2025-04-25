@@ -284,12 +284,12 @@ app.post('/recuperacion-nuevacontrasena', async (req, res) => {
   }
 });
 
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 
 app.post('/recuperacion-finalizar', async (req, res) => {
     const { email, nueva_password } = req.body;
 
-    const hash = await bcrypt.hash(nueva_password, 10);
+    const hash = await bcryptjs.hash(nueva_password, 10);
     await registro_model.updateOne({ correo: email }, { password: hash });
 
     // Elimina códigos usados
