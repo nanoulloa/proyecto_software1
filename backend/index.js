@@ -195,8 +195,10 @@ app.post('/add-login',(req,res)=>{
       // Guardar en la cookie
       res.cookie('sessionId', sessionId, {
           httpOnly: true,
-          maxAge: 3600000 // 1h
+          maxAge: 3600000 
       });
+
+      console.log('Cookie "sessionId" establecida.');
 
       console.log("credenciales validas");
       res.redirect('/dashboard');
