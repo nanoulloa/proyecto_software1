@@ -116,12 +116,28 @@ function estaAutenticado(req, res, next) {
 }
 
 // Middleware para verificar si el usuario es administrador
-function soloAdmin(req, res, next) {
+/*function soloAdmin(req, res, next) {
   if (req.isAuthenticated() && req.user && req.user.rol === 'admin') {
       return next();
   }
   res.status(403).send("Acceso denegado");
+}*/
+
+function soloAdmin(req, res, next) {
+  const sessionId = req.cookies.sessionId;
+  const sesion = sesiones[sessionId];
+
+  if (sesion && sesion.rol === 'admin') {
+    return next();
+  }
+
+  res.status(403).send("Acceso denegado");
 }
+
+module.exports = {
+  sesiones,
+  soloAdmin
+};
 
 // Importar rutas
 
@@ -196,8 +212,8 @@ app.listen(3000, () => {
 
 require('./db/db');
 
-//post 
-app.post('/add-login',(req,res)=>{
+//post  
+/*app.post('/add-login',(req,res)=>{
   console.log(req.body.nombreUsuario, req.body.contrasena,req.body);
   const { nombreUsuario } = req.body;
   if((req.body.nombreUsuario==="elnombre de usuario")&&(req.body.contrasena==="la contrasena")){
@@ -224,7 +240,42 @@ app.post('/add-login',(req,res)=>{
       res.redirect('/');
   } 
 })
-//pagina de control de usuarios 
+//pagina de control de usuarios */
+
+
+
+app.post('/add-login', async (req, res) => {
+  const { nombreUsuario, contrasena } = req.body;
+
+  try {
+    const usuario = await registro_model.findOne({ nombre: nombreUsuario });
+
+    if (usuario && usuario.password === contrasena) {
+      const sessionId = uuidv4();
+
+      // Guardar sesión con nombre y rol
+      sesiones[sessionId] = {
+        nombreUsuario: usuario.nombre,
+        rol: usuario.rol
+      };
+
+      // Guardar en la cookie
+      res.cookie('sessionId', sessionId, {
+        httpOnly: true,
+        maxAge: 3600000 // 1 hora
+      });
+
+      console.log('Inicio de sesión exitoso para:', usuario.nombre);
+      res.redirect('/dashboard');
+    } else {
+      console.log("Credenciales incorrectas");
+      res.redirect('/');
+    }
+  } catch (error) {
+    console.error("Error en la autenticación:", error);
+    res.status(500).send("Error del servidor");
+  }
+});
 
 const router = express.Router();
 const Registro = require('./models/registro.model'); // modelo de usuario

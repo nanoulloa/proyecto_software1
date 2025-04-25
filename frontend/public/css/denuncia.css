@@ -48,3 +48,48 @@ button {
 button:hover {
     background-color: #0277BD;
 }
+
+
+admin-denuncia.css */
+.denuncia-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.denuncia-card .acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-aprobar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-rechazar {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.estado-pendiente {
+    color: #ff9800;
+}
+
+.estado-aprobado {
+    color: #4CAF50;
+}
+
+.estado-rechazado {
+    color: #f44336;
+}
