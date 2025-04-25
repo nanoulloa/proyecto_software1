@@ -93,33 +93,35 @@ document.getElementById("logout_button").addEventListener("click", function() {
 });*/
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
     const placeholder = document.getElementById("header_placeholder");
-  
+
     fetch("/api/sesion-activa")
       .then(res => res.json())
       .then(data => {
+        console.log("Sesión activa:", data);  // Aquí puedes verificar la información de la sesión
+
         const rutaHeader = data.logueado 
           ? "/componentes/header_ingresado.html"
           : "componentes/header.html";
-  
+
         fetch(rutaHeader)
           .then(res => res.text())
           .then(html => {
             placeholder.innerHTML = html;
-  
+
             if (data.logueado) {
-              // Puedes mostrar el nombre del usuario o ajustar elementos
+              // Mostrar el nombre del usuario u otros elementos si está logueado
               const perfil = document.querySelector('.perfil_item');
               const logout = document.querySelector('.logout_item');
               if (perfil) perfil.style.display = 'inline-block';
               if (logout) logout.style.display = 'inline-block';
-  
+
               const logoutBtn = document.getElementById("logout_button");
               if (logoutBtn) {
                 logoutBtn.addEventListener("click", e => {
                   e.preventDefault();
-                  fetch("/logout").then(() => window.location.href = "/proyecto_software1/Index.html");
+                  fetch("/logout").then(() => window.location.href = "/");
                 });
               }
             }
@@ -128,6 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => {
         console.error("Error al verificar sesión:", err);
       });
-  });
+});
 
 
