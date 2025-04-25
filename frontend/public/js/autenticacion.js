@@ -39,41 +39,36 @@ $formulario.addEventListener('submit', (e) => {
     validarCodigo();
     
     if(campoValido) {
-        // Intentar forzar la redirección de diferentes maneras
-        try {
-            // Método 1: Usar setTimeout para dar tiempo a que se complete cualquier otra operación
-            setTimeout(() => {
-                window.location.href = '/recuperacion-nuevacontrasena';
-            }, 100);
-            
-            // Método alternativo si el anterior falla
-            // window.location.replace('/recuperacion-nuevacontrasena');
-            
-            console.log('Redirección iniciada a /recuperacion-nuevacontrasena');
-        } catch (error) {
-            console.error('Error al redirigir:', error);
-            // Como último recurso, intentar con una redirección tradicional
-            window.location = '/recuperacion-nuevacontrasena';
-        }
+        // Enviar el formulario al servidor en lugar de redirigir
+        $formulario.submit();
     } else {
         alert('Por favor, introduzca un código de recuperación válido de 6 dígitos.');
     }
 });
 
-// Agregar evento también al botón para asegurar que funcione
-document.querySelector('.btn-continuar_autenticacion').addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    validarCodigo();
-    
-    if(campoValido) {
-        // Intentar forzar la redirección
-        setTimeout(() => {
-            window.location.href = '/recuperacion-nuevacontrasena';
-        }, 100);
-        console.log('Redirección iniciada desde botón a /recuperacion-nuevacontrasena');
-    } else {
-        alert('Por favor, introduzca un código de recuperación válido de 6 dígitos.');
-    }
+// Cargar el email de la URL al campo oculto
+window.addEventListener("DOMContentLoaded", () => {
+    const email = new URLSearchParams(window.location.search).get("email");
+    document.getElementById("email_oculto").value = email;
 });
 
+
+app.post('/recuperacion-autenticacion', async (req, res) => {
+    const email = req.body.correo_recuperacion;
+
+    const usuario = await db.usuarios.findOne({ where: { email } });
+    if (!usuario) return res.status(404).send('Correo no registrado');
+
+    const codigo = Math.floor(100000 + Math.random() * 900000);
+    await db.codigos_recuperacion.create({ email, codigo });
+
+    // Aquí deberías enviar el código por correo (Nodemailer, etc.)
+    await enviarCorreo(email, `Tu código de recuperación es: ${codigo}`);
+
+    res.redirect(`/proyecto_software1/pages/recuperacion/autenticacion.html?email=${email}`);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    const email = new URLSearchParams(window.location.search).get("email");
+    document.getElementById("email_oculto").value = email;
+});
